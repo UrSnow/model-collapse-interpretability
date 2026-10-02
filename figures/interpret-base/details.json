@@ -1,0 +1,1505 @@
+[
+  {
+    "seed": 0,
+    "condition": "clean",
+    "generation": 0,
+    "baseline": {
+      "loss": 0.0002847338037099689,
+      "accuracy": 1.0
+    },
+    "previous_token_scores": [
+      0.720048725605011,
+      0.6550190448760986,
+      0.4384554922580719,
+      0.4297974407672882,
+      0.4572324752807617,
+      0.6600971817970276,
+      0.6969378590583801,
+      0.4716537296772003
+    ],
+    "induction_scores": [
+      0.9617882966995239,
+      0.7353005409240723,
+      0.8334323167800903,
+      0.9611806869506836,
+      0.9841488599777222,
+      0.9470700025558472,
+      0.9610826373100281,
+      0.9211163520812988
+    ],
+    "best_previous_head": 0,
+    "best_induction_head": 4,
+    "ablations": [
+      {
+        "layer": 0,
+        "head": 0,
+        "loss_increase": 0.0002161884622182697,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "loss_increase": -0.0002782490441859409,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "loss_increase": 0.0021597367303911597,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "loss_increase": -0.00024321217279066332,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "loss_increase": -0.00024903525263653137,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "loss_increase": 0.37773719188407995,
+        "accuracy_drop": 0.0546875
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "loss_increase": 0.004698873875895515,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "loss_increase": -1.260795397683978e-05,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "loss_increase": -0.0002631691786518786,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "loss_increase": 6.749923340976238e-05,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "loss_increase": 0.00013150149607099593,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "loss_increase": 6.732434849254787e-05,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "loss_increase": -0.0002666358996066265,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "loss_increase": -0.00015857178368605673,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "loss_increase": 0.0034634970652405173,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "loss_increase": 0.0001433347351849079,
+        "accuracy_drop": 0.0
+      }
+    ],
+    "layer_ablations": {
+      "first_layer": {
+        "loss_increase": 4.527288851706544,
+        "accuracy_drop": 0.515625
+      },
+      "second_layer": {
+        "loss_increase": 5.429216799704591,
+        "accuracy_drop": 0.7265625
+      },
+      "both_layers": {
+        "loss_increase": 5.9313921308203135,
+        "accuracy_drop": 0.7421875
+      }
+    },
+    "selected_group_ablation": {
+      "loss_increase": -0.00017883037799037993,
+      "accuracy_drop": 0.0
+    },
+    "selected_heads_only": {
+      "loss": 3.061938762664795,
+      "accuracy": 0.6015625
+    },
+    "patching": {
+      "effective_examples": 128,
+      "total_examples": 128,
+      "previous_logprob_restoration": 0.009650296531617641,
+      "previous_accuracy": 0.0,
+      "induction_logprob_restoration": 0.3866432011127472,
+      "induction_accuracy": 0.0078125,
+      "group_logprob_restoration": 0.4071160852909088,
+      "group_accuracy": 0.0078125
+    },
+    "representations": {
+      "symbol_mean_abs_cosine": 0.2737736999988556,
+      "symbol_effective_rank": 14.848882675170898,
+      "label_mean_abs_cosine": 0.044990722090005875,
+      "label_effective_rank": 3.98579740524292
+    }
+  },
+  {
+    "seed": 0,
+    "condition": "clean",
+    "generation": 1,
+    "baseline": {
+      "loss": 6.128068889665883e-06,
+      "accuracy": 1.0
+    },
+    "previous_token_scores": [
+      0.6744754910469055,
+      0.49566128849983215,
+      0.36900630593299866,
+      0.4570179879665375,
+      0.6050721406936646,
+      0.6393498778343201,
+      0.5983249545097351,
+      0.5583451986312866
+    ],
+    "induction_scores": [
+      0.49834078550338745,
+      0.5110304951667786,
+      0.5186088681221008,
+      0.5121612548828125,
+      0.5105729103088379,
+      0.5098428726196289,
+      0.5064927339553833,
+      0.516815721988678
+    ],
+    "best_previous_head": 0,
+    "best_induction_head": 2,
+    "ablations": [
+      {
+        "layer": 0,
+        "head": 0,
+        "loss_increase": 4.5018960008746944e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "loss_increase": 0.9806589596310005,
+        "accuracy_drop": 0.1015625
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "loss_increase": 0.010877745259676885,
+        "accuracy_drop": 0.0078125
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "loss_increase": 6.602622306672856e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "loss_increase": 0.0002468520297043142,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "loss_increase": 0.09176117557672114,
+        "accuracy_drop": 0.0078125
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "loss_increase": 4.663812433136627e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "loss_increase": 1.3261942513054237e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "loss_increase": -8.660117600811645e-08,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "loss_increase": 1.0132407624041662e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "loss_increase": 2.9708098736591637e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "loss_increase": 4.96399024996208e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "loss_increase": 2.151368789782282e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "loss_increase": 1.3598037185147405e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "loss_increase": 2.146650331269484e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "loss_increase": 2.8645335987675935e-06,
+        "accuracy_drop": 0.0
+      }
+    ],
+    "layer_ablations": {
+      "first_layer": {
+        "loss_increase": 5.179436277631794,
+        "accuracy_drop": 0.5234375
+      },
+      "second_layer": {
+        "loss_increase": 5.297030042890583,
+        "accuracy_drop": 0.78125
+      },
+      "both_layers": {
+        "loss_increase": 5.916456293348347,
+        "accuracy_drop": 0.765625
+      }
+    },
+    "selected_group_ablation": {
+      "loss_increase": 3.944055606552865e-06,
+      "accuracy_drop": 0.0
+    },
+    "selected_heads_only": {
+      "loss": 4.550396919250488,
+      "accuracy": 0.3671875
+    },
+    "patching": {
+      "effective_examples": 128,
+      "total_examples": 128,
+      "previous_logprob_restoration": 0.013219568878412247,
+      "previous_accuracy": 0.0,
+      "induction_logprob_restoration": 0.06165430322289467,
+      "induction_accuracy": 0.0,
+      "group_logprob_restoration": 0.0786510482430458,
+      "group_accuracy": 0.0
+    },
+    "representations": {
+      "symbol_mean_abs_cosine": 0.29618972539901733,
+      "symbol_effective_rank": 13.778236389160156,
+      "label_mean_abs_cosine": 0.0634559616446495,
+      "label_effective_rank": 3.988518476486206
+    }
+  },
+  {
+    "seed": 0,
+    "condition": "clean",
+    "generation": 2,
+    "baseline": {
+      "loss": 4.909918516204925e-06,
+      "accuracy": 1.0
+    },
+    "previous_token_scores": [
+      0.8033799529075623,
+      0.4287448227405548,
+      0.7974592447280884,
+      0.46661990880966187,
+      0.43732497096061707,
+      0.6230863928794861,
+      0.5069730877876282,
+      0.6043317914009094
+    ],
+    "induction_scores": [
+      0.5478370785713196,
+      0.5540124177932739,
+      0.5459858775138855,
+      0.5482980608940125,
+      0.5402754545211792,
+      0.5423216819763184,
+      0.5455304384231567,
+      0.5353668928146362
+    ],
+    "best_previous_head": 0,
+    "best_induction_head": 1,
+    "ablations": [
+      {
+        "layer": 0,
+        "head": 0,
+        "loss_increase": 0.00031695568713985267,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "loss_increase": 3.867842224281048e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "loss_increase": 1.3747265115521259,
+        "accuracy_drop": 0.140625
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "loss_increase": 0.09829779715755649,
+        "accuracy_drop": 0.0234375
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "loss_increase": 5.224651431490202e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "loss_increase": 3.306186044937931e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "loss_increase": 1.1883366823894903e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "loss_increase": 0.017137559144885017,
+        "accuracy_drop": 0.015625
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "loss_increase": 4.0046279536909424e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "loss_increase": 1.0067501534649637e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "loss_increase": 1.3224871509009972e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "loss_increase": 1.825392246246338e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "loss_increase": 3.5855782698490657e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "loss_increase": 8.297924978251103e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "loss_increase": 5.504048203874845e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "loss_increase": 2.3664720174565446e-06,
+        "accuracy_drop": 0.0
+      }
+    ],
+    "layer_ablations": {
+      "first_layer": {
+        "loss_increase": 5.386520244195253,
+        "accuracy_drop": 0.5859375
+      },
+      "second_layer": {
+        "loss_increase": 6.052230216576845,
+        "accuracy_drop": 0.796875
+      },
+      "both_layers": {
+        "loss_increase": 5.85245547445038,
+        "accuracy_drop": 0.7421875
+      }
+    },
+    "selected_group_ablation": {
+      "loss_increase": 0.002395899514795019,
+      "accuracy_drop": 0.0
+    },
+    "selected_heads_only": {
+      "loss": 3.7721304893493652,
+      "accuracy": 0.5390625
+    },
+    "patching": {
+      "effective_examples": 128,
+      "total_examples": 128,
+      "previous_logprob_restoration": 0.007989032194018364,
+      "previous_accuracy": 0.0,
+      "induction_logprob_restoration": 0.1627146154642105,
+      "induction_accuracy": 0.0,
+      "group_logprob_restoration": 0.17597906291484833,
+      "group_accuracy": 0.0
+    },
+    "representations": {
+      "symbol_mean_abs_cosine": 0.2394556701183319,
+      "symbol_effective_rank": 17.723295211791992,
+      "label_mean_abs_cosine": 0.06145205348730087,
+      "label_effective_rank": 3.9792051315307617
+    }
+  },
+  {
+    "seed": 0,
+    "condition": "mixed",
+    "generation": 0,
+    "baseline": {
+      "loss": 0.0002847338037099689,
+      "accuracy": 1.0
+    },
+    "previous_token_scores": [
+      0.720048725605011,
+      0.6550190448760986,
+      0.4384554922580719,
+      0.4297974407672882,
+      0.4572324752807617,
+      0.6600971817970276,
+      0.6969378590583801,
+      0.4716537296772003
+    ],
+    "induction_scores": [
+      0.9617882966995239,
+      0.7353005409240723,
+      0.8334323167800903,
+      0.9611806869506836,
+      0.9841488599777222,
+      0.9470700025558472,
+      0.9610826373100281,
+      0.9211163520812988
+    ],
+    "best_previous_head": 0,
+    "best_induction_head": 4,
+    "ablations": [
+      {
+        "layer": 0,
+        "head": 0,
+        "loss_increase": 0.0002161884622182697,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "loss_increase": -0.0002782490441859409,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "loss_increase": 0.0021597367303911597,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "loss_increase": -0.00024321217279066332,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "loss_increase": -0.00024903525263653137,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "loss_increase": 0.37773719188407995,
+        "accuracy_drop": 0.0546875
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "loss_increase": 0.004698873875895515,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "loss_increase": -1.260795397683978e-05,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "loss_increase": -0.0002631691786518786,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "loss_increase": 6.749923340976238e-05,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "loss_increase": 0.00013150149607099593,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "loss_increase": 6.732434849254787e-05,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "loss_increase": -0.0002666358996066265,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "loss_increase": -0.00015857178368605673,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "loss_increase": 0.0034634970652405173,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "loss_increase": 0.0001433347351849079,
+        "accuracy_drop": 0.0
+      }
+    ],
+    "layer_ablations": {
+      "first_layer": {
+        "loss_increase": 4.527288851706544,
+        "accuracy_drop": 0.515625
+      },
+      "second_layer": {
+        "loss_increase": 5.429216799704591,
+        "accuracy_drop": 0.7265625
+      },
+      "both_layers": {
+        "loss_increase": 5.9313921308203135,
+        "accuracy_drop": 0.7421875
+      }
+    },
+    "selected_group_ablation": {
+      "loss_increase": -0.00017883037799037993,
+      "accuracy_drop": 0.0
+    },
+    "selected_heads_only": {
+      "loss": 3.061938762664795,
+      "accuracy": 0.6015625
+    },
+    "patching": {
+      "effective_examples": 128,
+      "total_examples": 128,
+      "previous_logprob_restoration": 0.009650296531617641,
+      "previous_accuracy": 0.0,
+      "induction_logprob_restoration": 0.3866432011127472,
+      "induction_accuracy": 0.0078125,
+      "group_logprob_restoration": 0.4071160852909088,
+      "group_accuracy": 0.0078125
+    },
+    "representations": {
+      "symbol_mean_abs_cosine": 0.2737736999988556,
+      "symbol_effective_rank": 14.848882675170898,
+      "label_mean_abs_cosine": 0.044990722090005875,
+      "label_effective_rank": 3.98579740524292
+    }
+  },
+  {
+    "seed": 0,
+    "condition": "mixed",
+    "generation": 1,
+    "baseline": {
+      "loss": 6.128068889665883e-06,
+      "accuracy": 1.0
+    },
+    "previous_token_scores": [
+      0.6744754910469055,
+      0.49566128849983215,
+      0.36900630593299866,
+      0.4570179879665375,
+      0.6050721406936646,
+      0.6393498778343201,
+      0.5983249545097351,
+      0.5583451986312866
+    ],
+    "induction_scores": [
+      0.49834078550338745,
+      0.5110304951667786,
+      0.5186088681221008,
+      0.5121612548828125,
+      0.5105729103088379,
+      0.5098428726196289,
+      0.5064927339553833,
+      0.516815721988678
+    ],
+    "best_previous_head": 0,
+    "best_induction_head": 2,
+    "ablations": [
+      {
+        "layer": 0,
+        "head": 0,
+        "loss_increase": 4.5018960008746944e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "loss_increase": 0.9806589596310005,
+        "accuracy_drop": 0.1015625
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "loss_increase": 0.010877745259676885,
+        "accuracy_drop": 0.0078125
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "loss_increase": 6.602622306672856e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "loss_increase": 0.0002468520297043142,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "loss_increase": 0.09176117557672114,
+        "accuracy_drop": 0.0078125
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "loss_increase": 4.663812433136627e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "loss_increase": 1.3261942513054237e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "loss_increase": -8.660117600811645e-08,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "loss_increase": 1.0132407624041662e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "loss_increase": 2.9708098736591637e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "loss_increase": 4.96399024996208e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "loss_increase": 2.151368789782282e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "loss_increase": 1.3598037185147405e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "loss_increase": 2.146650331269484e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "loss_increase": 2.8645335987675935e-06,
+        "accuracy_drop": 0.0
+      }
+    ],
+    "layer_ablations": {
+      "first_layer": {
+        "loss_increase": 5.179436277631794,
+        "accuracy_drop": 0.5234375
+      },
+      "second_layer": {
+        "loss_increase": 5.297030042890583,
+        "accuracy_drop": 0.78125
+      },
+      "both_layers": {
+        "loss_increase": 5.916456293348347,
+        "accuracy_drop": 0.765625
+      }
+    },
+    "selected_group_ablation": {
+      "loss_increase": 3.944055606552865e-06,
+      "accuracy_drop": 0.0
+    },
+    "selected_heads_only": {
+      "loss": 4.550396919250488,
+      "accuracy": 0.3671875
+    },
+    "patching": {
+      "effective_examples": 128,
+      "total_examples": 128,
+      "previous_logprob_restoration": 0.013219568878412247,
+      "previous_accuracy": 0.0,
+      "induction_logprob_restoration": 0.06165430322289467,
+      "induction_accuracy": 0.0,
+      "group_logprob_restoration": 0.0786510482430458,
+      "group_accuracy": 0.0
+    },
+    "representations": {
+      "symbol_mean_abs_cosine": 0.29618972539901733,
+      "symbol_effective_rank": 13.778236389160156,
+      "label_mean_abs_cosine": 0.0634559616446495,
+      "label_effective_rank": 3.988518476486206
+    }
+  },
+  {
+    "seed": 0,
+    "condition": "mixed",
+    "generation": 2,
+    "baseline": {
+      "loss": 4.909918516204925e-06,
+      "accuracy": 1.0
+    },
+    "previous_token_scores": [
+      0.8033799529075623,
+      0.4287448227405548,
+      0.7974592447280884,
+      0.46661990880966187,
+      0.43732497096061707,
+      0.6230863928794861,
+      0.5069730877876282,
+      0.6043317914009094
+    ],
+    "induction_scores": [
+      0.5478370785713196,
+      0.5540124177932739,
+      0.5459858775138855,
+      0.5482980608940125,
+      0.5402754545211792,
+      0.5423216819763184,
+      0.5455304384231567,
+      0.5353668928146362
+    ],
+    "best_previous_head": 0,
+    "best_induction_head": 1,
+    "ablations": [
+      {
+        "layer": 0,
+        "head": 0,
+        "loss_increase": 0.00031695568713985267,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "loss_increase": 3.867842224281048e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "loss_increase": 1.3747265115521259,
+        "accuracy_drop": 0.140625
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "loss_increase": 0.09829779715755649,
+        "accuracy_drop": 0.0234375
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "loss_increase": 5.224651431490202e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "loss_increase": 3.306186044937931e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "loss_increase": 1.1883366823894903e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "loss_increase": 0.017137559144885017,
+        "accuracy_drop": 0.015625
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "loss_increase": 4.0046279536909424e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "loss_increase": 1.0067501534649637e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "loss_increase": 1.3224871509009972e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "loss_increase": 1.825392246246338e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "loss_increase": 3.5855782698490657e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "loss_increase": 8.297924978251103e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "loss_increase": 5.504048203874845e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "loss_increase": 2.3664720174565446e-06,
+        "accuracy_drop": 0.0
+      }
+    ],
+    "layer_ablations": {
+      "first_layer": {
+        "loss_increase": 5.386520244195253,
+        "accuracy_drop": 0.5859375
+      },
+      "second_layer": {
+        "loss_increase": 6.052230216576845,
+        "accuracy_drop": 0.796875
+      },
+      "both_layers": {
+        "loss_increase": 5.85245547445038,
+        "accuracy_drop": 0.7421875
+      }
+    },
+    "selected_group_ablation": {
+      "loss_increase": 0.002395899514795019,
+      "accuracy_drop": 0.0
+    },
+    "selected_heads_only": {
+      "loss": 3.7721304893493652,
+      "accuracy": 0.5390625
+    },
+    "patching": {
+      "effective_examples": 128,
+      "total_examples": 128,
+      "previous_logprob_restoration": 0.007989032194018364,
+      "previous_accuracy": 0.0,
+      "induction_logprob_restoration": 0.1627146154642105,
+      "induction_accuracy": 0.0,
+      "group_logprob_restoration": 0.17597906291484833,
+      "group_accuracy": 0.0
+    },
+    "representations": {
+      "symbol_mean_abs_cosine": 0.2394556701183319,
+      "symbol_effective_rank": 17.723295211791992,
+      "label_mean_abs_cosine": 0.06145205348730087,
+      "label_effective_rank": 3.9792051315307617
+    }
+  },
+  {
+    "seed": 0,
+    "condition": "synthetic",
+    "generation": 0,
+    "baseline": {
+      "loss": 0.0002847338037099689,
+      "accuracy": 1.0
+    },
+    "previous_token_scores": [
+      0.720048725605011,
+      0.6550190448760986,
+      0.4384554922580719,
+      0.4297974407672882,
+      0.4572324752807617,
+      0.6600971817970276,
+      0.6969378590583801,
+      0.4716537296772003
+    ],
+    "induction_scores": [
+      0.9617882966995239,
+      0.7353005409240723,
+      0.8334323167800903,
+      0.9611806869506836,
+      0.9841488599777222,
+      0.9470700025558472,
+      0.9610826373100281,
+      0.9211163520812988
+    ],
+    "best_previous_head": 0,
+    "best_induction_head": 4,
+    "ablations": [
+      {
+        "layer": 0,
+        "head": 0,
+        "loss_increase": 0.0002161884622182697,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "loss_increase": -0.0002782490441859409,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "loss_increase": 0.0021597367303911597,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "loss_increase": -0.00024321217279066332,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "loss_increase": -0.00024903525263653137,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "loss_increase": 0.37773719188407995,
+        "accuracy_drop": 0.0546875
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "loss_increase": 0.004698873875895515,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "loss_increase": -1.260795397683978e-05,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "loss_increase": -0.0002631691786518786,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "loss_increase": 6.749923340976238e-05,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "loss_increase": 0.00013150149607099593,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "loss_increase": 6.732434849254787e-05,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "loss_increase": -0.0002666358996066265,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "loss_increase": -0.00015857178368605673,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "loss_increase": 0.0034634970652405173,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "loss_increase": 0.0001433347351849079,
+        "accuracy_drop": 0.0
+      }
+    ],
+    "layer_ablations": {
+      "first_layer": {
+        "loss_increase": 4.527288851706544,
+        "accuracy_drop": 0.515625
+      },
+      "second_layer": {
+        "loss_increase": 5.429216799704591,
+        "accuracy_drop": 0.7265625
+      },
+      "both_layers": {
+        "loss_increase": 5.9313921308203135,
+        "accuracy_drop": 0.7421875
+      }
+    },
+    "selected_group_ablation": {
+      "loss_increase": -0.00017883037799037993,
+      "accuracy_drop": 0.0
+    },
+    "selected_heads_only": {
+      "loss": 3.061938762664795,
+      "accuracy": 0.6015625
+    },
+    "patching": {
+      "effective_examples": 128,
+      "total_examples": 128,
+      "previous_logprob_restoration": 0.009650296531617641,
+      "previous_accuracy": 0.0,
+      "induction_logprob_restoration": 0.3866432011127472,
+      "induction_accuracy": 0.0078125,
+      "group_logprob_restoration": 0.4071160852909088,
+      "group_accuracy": 0.0078125
+    },
+    "representations": {
+      "symbol_mean_abs_cosine": 0.2737736999988556,
+      "symbol_effective_rank": 14.848882675170898,
+      "label_mean_abs_cosine": 0.044990722090005875,
+      "label_effective_rank": 3.98579740524292
+    }
+  },
+  {
+    "seed": 0,
+    "condition": "synthetic",
+    "generation": 1,
+    "baseline": {
+      "loss": 6.128068889665883e-06,
+      "accuracy": 1.0
+    },
+    "previous_token_scores": [
+      0.6744754910469055,
+      0.49566128849983215,
+      0.36900630593299866,
+      0.4570179879665375,
+      0.6050721406936646,
+      0.6393498778343201,
+      0.5983249545097351,
+      0.5583451986312866
+    ],
+    "induction_scores": [
+      0.49834078550338745,
+      0.5110304951667786,
+      0.5186088681221008,
+      0.5121612548828125,
+      0.5105729103088379,
+      0.5098428726196289,
+      0.5064927339553833,
+      0.516815721988678
+    ],
+    "best_previous_head": 0,
+    "best_induction_head": 2,
+    "ablations": [
+      {
+        "layer": 0,
+        "head": 0,
+        "loss_increase": 4.5018960008746944e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "loss_increase": 0.9806589596310005,
+        "accuracy_drop": 0.1015625
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "loss_increase": 0.010877745259676885,
+        "accuracy_drop": 0.0078125
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "loss_increase": 6.602622306672856e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "loss_increase": 0.0002468520297043142,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "loss_increase": 0.09176117557672114,
+        "accuracy_drop": 0.0078125
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "loss_increase": 4.663812433136627e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "loss_increase": 1.3261942513054237e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "loss_increase": -8.660117600811645e-08,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "loss_increase": 1.0132407624041662e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "loss_increase": 2.9708098736591637e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "loss_increase": 4.96399024996208e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "loss_increase": 2.151368789782282e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "loss_increase": 1.3598037185147405e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "loss_increase": 2.146650331269484e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "loss_increase": 2.8645335987675935e-06,
+        "accuracy_drop": 0.0
+      }
+    ],
+    "layer_ablations": {
+      "first_layer": {
+        "loss_increase": 5.179436277631794,
+        "accuracy_drop": 0.5234375
+      },
+      "second_layer": {
+        "loss_increase": 5.297030042890583,
+        "accuracy_drop": 0.78125
+      },
+      "both_layers": {
+        "loss_increase": 5.916456293348347,
+        "accuracy_drop": 0.765625
+      }
+    },
+    "selected_group_ablation": {
+      "loss_increase": 3.944055606552865e-06,
+      "accuracy_drop": 0.0
+    },
+    "selected_heads_only": {
+      "loss": 4.550396919250488,
+      "accuracy": 0.3671875
+    },
+    "patching": {
+      "effective_examples": 128,
+      "total_examples": 128,
+      "previous_logprob_restoration": 0.013219568878412247,
+      "previous_accuracy": 0.0,
+      "induction_logprob_restoration": 0.06165430322289467,
+      "induction_accuracy": 0.0,
+      "group_logprob_restoration": 0.0786510482430458,
+      "group_accuracy": 0.0
+    },
+    "representations": {
+      "symbol_mean_abs_cosine": 0.29618972539901733,
+      "symbol_effective_rank": 13.778236389160156,
+      "label_mean_abs_cosine": 0.0634559616446495,
+      "label_effective_rank": 3.988518476486206
+    }
+  },
+  {
+    "seed": 0,
+    "condition": "synthetic",
+    "generation": 2,
+    "baseline": {
+      "loss": 9.138916539086495e-06,
+      "accuracy": 1.0
+    },
+    "previous_token_scores": [
+      0.8328617215156555,
+      0.4374207854270935,
+      0.8063676953315735,
+      0.5060151815414429,
+      0.4511837363243103,
+      0.5407640933990479,
+      0.503437340259552,
+      0.5850492119789124
+    ],
+    "induction_scores": [
+      0.5705252885818481,
+      0.5583785772323608,
+      0.584160327911377,
+      0.5658857226371765,
+      0.5733303427696228,
+      0.5503585338592529,
+      0.549180269241333,
+      0.556950569152832
+    ],
+    "best_previous_head": 0,
+    "best_induction_head": 2,
+    "ablations": [
+      {
+        "layer": 0,
+        "head": 0,
+        "loss_increase": 6.590109751414275e-05,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "loss_increase": -4.010137217846932e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "loss_increase": 0.5591392323030959,
+        "accuracy_drop": 0.0859375
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "loss_increase": 0.04219413098235236,
+        "accuracy_drop": 0.0078125
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "loss_increase": 3.044674485863652e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "loss_increase": -8.23489244794473e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "loss_increase": 3.7006047932663932e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "loss_increase": 0.020946187119079696,
+        "accuracy_drop": 0.0078125
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "loss_increase": 7.52556024963269e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "loss_increase": -2.382255843258463e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "loss_increase": 1.1458587323431857e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "loss_increase": -7.493345037801191e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "loss_increase": -2.040610070253024e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "loss_increase": 5.259732461126987e-06,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "loss_increase": 4.357470970717259e-07,
+        "accuracy_drop": 0.0
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "loss_increase": 1.777299985405989e-06,
+        "accuracy_drop": 0.0
+      }
+    ],
+    "layer_ablations": {
+      "first_layer": {
+        "loss_increase": 5.058764855529262,
+        "accuracy_drop": 0.53125
+      },
+      "second_layer": {
+        "loss_increase": 6.343395154143764,
+        "accuracy_drop": 0.75
+      },
+      "both_layers": {
+        "loss_increase": 6.1252106830133926,
+        "accuracy_drop": 0.7578125
+      }
+    },
+    "selected_group_ablation": {
+      "loss_increase": 0.00020196461173327407,
+      "accuracy_drop": 0.0
+    },
+    "selected_heads_only": {
+      "loss": 4.266628742218018,
+      "accuracy": 0.4609375
+    },
+    "patching": {
+      "effective_examples": 128,
+      "total_examples": 128,
+      "previous_logprob_restoration": 0.007046931888908148,
+      "previous_accuracy": 0.0,
+      "induction_logprob_restoration": 0.03352721035480499,
+      "induction_accuracy": 0.0,
+      "group_logprob_restoration": 0.04176918789744377,
+      "group_accuracy": 0.0
+    },
+    "representations": {
+      "symbol_mean_abs_cosine": 0.25532275438308716,
+      "symbol_effective_rank": 15.794170379638672,
+      "label_mean_abs_cosine": 0.059990547597408295,
+      "label_effective_rank": 3.9826560020446777
+    }
+  }
+]

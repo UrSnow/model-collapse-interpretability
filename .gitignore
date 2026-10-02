@@ -1,0 +1,60 @@
+# Python bytecode and tooling caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Local virtual environments
+.venv/
+.venv-wsl/
+.venv-*/
+venv/
+env/
+
+# Generated experiments, checkpoints, and tracking logs
+/runs/
+/outputs/
+/checkpoints/
+/wandb/
+/mlruns/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+events.out.tfevents.*
+*.log
+
+# Temporary analysis files and notebook checkpoints
+/tmp/
+/temp/
+.ipynb_checkpoints/
+*.tmp
+*.swp
+*.swo
+
+# Python packaging output
+/build/
+/dist/
+*.egg-info/
+
+# Local credentials and environment settings
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Machine-specific editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Keep source, tests, configuration templates, Markdown reports, and deliberate
+# publication figures outside generated-output directories eligible for Git.
