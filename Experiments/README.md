@@ -25,5 +25,6 @@ powershell -ExecutionPolicy Bypass -File build_progress_presentation.ps1
 The archived `runs/` and feature file are local research artifacts, not files
 to upload with the submission. The old PDF in `past_drafts/` predates the
 revised equal-contribution statement and must not be submitted.
-The member notebooks and historical presentation also stay local; they are
-not included in the GitHub repository or final submission package.
+The member notebooks are included in GitHub as an archive of exploratory
+work, not as aligned Omniglot results or part of the final submission package.
+The historical presentation stays local.

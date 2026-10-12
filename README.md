@@ -4,8 +4,9 @@ We keep our research record and the hand-in package separate:
 
 - [`Experiments/`](Experiments/README.md) contains the notebooks, exploratory
   token-task code, working reports, figures, references, and presentation.
-  The notebooks, presentation file, references, raw runs, and feature data
-  stay local and are ignored by Git. It is not the submission package.
+  The member notebooks are published as exploratory work. The presentation
+  file, references, raw runs, and feature data stay local and are ignored by
+  Git. This is not the submission package.
 - [`submission/`](submission/README.txt) contains the aligned Omniglot code,
   focused tests, dependencies, and run instructions. The contribution
   statement remains local until all members approve it; the extended abstract

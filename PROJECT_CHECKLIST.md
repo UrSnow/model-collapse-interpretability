@@ -43,10 +43,10 @@ file as milestones are verified.
   unapproved member statement out of the GitHub payload.
 - [x] Stage and inspect the file list: no course references, raw runs, feature
   data, or unapproved contribution statement are staged; whitespace check passes.
-- [x] Keep both original member notebooks and the historical presentation
-  local, per the group's decision; exclude them from the staged GitHub payload.
-- [x] Review the final staged payload before committing or pushing; no member
-  notebooks, presentation, course PDFs, raw data, or statement draft are staged.
+- [x] Include both original member notebooks in the GitHub research archive;
+  keep the historical presentation local and outside the submission package.
+- [x] Review the final staged payload before committing or pushing; no
+  presentation, course PDFs, raw data, or statement draft are staged.
 - [x] Recheck the reported generation-2 table against the saved aggregate CSV;
   the frozen evaluation audit records 90 checkpoints and zero prompt overlap.
 - [x] Visually inspect the final comparison figure and check representative
@@ -213,7 +213,7 @@ Status: the topic-relevant methods from both notebooks have been adapted into
 the aligned Omniglot project. Optional visualizations remain conditional on
 the abstract. These checkboxes track method integration, not exclusive credit.
 
-**Member 1:** local notebook `Experiments/notebooks/NLP_Project_One.ipynb`
+**Member 1:** [NLP_Project_One.ipynb](Experiments/notebooks/NLP_Project_One.ipynb)
 
 - [x] Adopt the recursive-generation experiment structure: train a fresh model
   on predecessor-generated targets and compare later generations with G0.
@@ -229,8 +229,7 @@ the abstract. These checkboxes track method integration, not exclusive credit.
 - [x] Compare candidate head scores across generations and conditions using
   the frozen checkpoints; add heatmaps only if they clarify the final claim.
 
-**Member 2:** local notebook
-`Experiments/notebooks/NLP_Project_Final_Parts_1_to_4.ipynb`
+**Member 2:** [NLP_Project_Final_Parts_1_to_4.ipynb](Experiments/notebooks/NLP_Project_Final_Parts_1_to_4.ipynb)
 
 - [x] Adopt teacher-forced three-output training and separate first-label,
   next-feature, and second-label evaluation. Use pointer-distribution metrics

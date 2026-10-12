@@ -54,8 +54,7 @@ events.out.tfevents.*
 # Generated presentation previews
 /Experiments/presentations/.build/
 
-# Member notebooks and the historical deck are retained locally, not published.
-/Experiments/notebooks/
+# The historical deck remains local.
 /Experiments/presentations/*.pptx
 
 # Third-party course materials and unapproved contribution drafts stay local.
