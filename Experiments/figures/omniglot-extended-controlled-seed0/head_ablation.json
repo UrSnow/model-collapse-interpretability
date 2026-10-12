@@ -1,0 +1,389 @@
+{
+  "clean": {
+    "diagnostic_size": 9,
+    "baseline": {
+      "first_label_nll": 0.0818660631775856,
+      "next_feature_nll": 0.6936479210853577,
+      "second_label_nll": 0.08136340975761414,
+      "pointer_tv": 0.012302967719733715,
+      "pointer_entropy": 0.6926470994949341,
+      "first_label_accuracy": 0.97265625,
+      "second_label_accuracy": 0.97265625,
+      "greedy_joint_accuracy": 0.953125,
+      "loss": 0.28562579800685245,
+      "perplexity": 1.3305944509853784
+    },
+    "ablations": [
+      {
+        "layer": 0,
+        "head": 0,
+        "first_label_accuracy_drop": 0.01171875,
+        "second_label_accuracy_drop": 0.03515625,
+        "pointer_tv_change": 0.0029872870072722435
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "first_label_accuracy_drop": 0.0078125,
+        "second_label_accuracy_drop": 0.01171875,
+        "pointer_tv_change": 0.0011477936059236526
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "first_label_accuracy_drop": 0.0234375,
+        "second_label_accuracy_drop": 0.02734375,
+        "pointer_tv_change": 0.0014983667060732841
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "first_label_accuracy_drop": 0.01171875,
+        "second_label_accuracy_drop": 0.00390625,
+        "pointer_tv_change": 0.0043289074674248695
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "first_label_accuracy_drop": 0.0390625,
+        "second_label_accuracy_drop": 0.01171875,
+        "pointer_tv_change": 0.0029015392065048218
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "first_label_accuracy_drop": 0.0546875,
+        "second_label_accuracy_drop": 0.05859375,
+        "pointer_tv_change": 0.0016453759744763374
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "first_label_accuracy_drop": 0.11328125,
+        "second_label_accuracy_drop": 0.0859375,
+        "pointer_tv_change": 0.0014245612546801567
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "first_label_accuracy_drop": 0.0078125,
+        "second_label_accuracy_drop": 0.00390625,
+        "pointer_tv_change": 0.0006557190790772438
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "first_label_accuracy_drop": 0.0078125,
+        "second_label_accuracy_drop": 0.0,
+        "pointer_tv_change": 0.001703096553683281
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "first_label_accuracy_drop": 0.00390625,
+        "second_label_accuracy_drop": 0.0,
+        "pointer_tv_change": 0.001987125724554062
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "first_label_accuracy_drop": 0.0,
+        "second_label_accuracy_drop": -0.00390625,
+        "pointer_tv_change": 0.002873155288398266
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "first_label_accuracy_drop": 0.00390625,
+        "second_label_accuracy_drop": 0.01171875,
+        "pointer_tv_change": 0.007394027896225452
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "first_label_accuracy_drop": 0.0078125,
+        "second_label_accuracy_drop": 0.0078125,
+        "pointer_tv_change": 0.004069126211106777
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "first_label_accuracy_drop": 0.0,
+        "second_label_accuracy_drop": -0.00390625,
+        "pointer_tv_change": 0.002566177397966385
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "first_label_accuracy_drop": 0.0078125,
+        "second_label_accuracy_drop": 0.0078125,
+        "pointer_tv_change": 0.00042335037142038345
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "first_label_accuracy_drop": 0.0078125,
+        "second_label_accuracy_drop": 0.01171875,
+        "pointer_tv_change": 0.0011469656601548195
+      }
+    ]
+  },
+  "feedback": {
+    "diagnostic_size": 9,
+    "baseline": {
+      "first_label_nll": 0.11365419626235962,
+      "next_feature_nll": 0.7357255816459656,
+      "second_label_nll": 0.11341893672943115,
+      "pointer_tv": 0.1103704571723938,
+      "pointer_entropy": 0.6541212797164917,
+      "first_label_accuracy": 0.9609375,
+      "second_label_accuracy": 0.9609375,
+      "greedy_joint_accuracy": 0.93359375,
+      "loss": 0.32093290487925213,
+      "perplexity": 1.3784130929981302
+    },
+    "ablations": [
+      {
+        "layer": 0,
+        "head": 0,
+        "first_label_accuracy_drop": 0.1640625,
+        "second_label_accuracy_drop": 0.140625,
+        "pointer_tv_change": 0.0003838390111923218
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "first_label_accuracy_drop": 0.0234375,
+        "second_label_accuracy_drop": 0.02734375,
+        "pointer_tv_change": -0.012784115970134735
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "first_label_accuracy_drop": 0.0234375,
+        "second_label_accuracy_drop": 0.0234375,
+        "pointer_tv_change": 0.006598897278308868
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "first_label_accuracy_drop": -0.00390625,
+        "second_label_accuracy_drop": 0.0390625,
+        "pointer_tv_change": 0.002016402781009674
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "first_label_accuracy_drop": 0.0703125,
+        "second_label_accuracy_drop": 0.0546875,
+        "pointer_tv_change": 0.0006286650896072388
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "first_label_accuracy_drop": 0.01171875,
+        "second_label_accuracy_drop": 0.03125,
+        "pointer_tv_change": 0.003997907042503357
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "first_label_accuracy_drop": 0.00390625,
+        "second_label_accuracy_drop": 0.0234375,
+        "pointer_tv_change": 0.0059684813022613525
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "first_label_accuracy_drop": 0.0078125,
+        "second_label_accuracy_drop": 0.0234375,
+        "pointer_tv_change": 0.007394850254058838
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "first_label_accuracy_drop": 0.0,
+        "second_label_accuracy_drop": 0.00390625,
+        "pointer_tv_change": -0.0051909685134887695
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "first_label_accuracy_drop": -0.00390625,
+        "second_label_accuracy_drop": 0.00390625,
+        "pointer_tv_change": -0.0004757493734359741
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "first_label_accuracy_drop": 0.00390625,
+        "second_label_accuracy_drop": 0.0078125,
+        "pointer_tv_change": 0.008177727460861206
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "first_label_accuracy_drop": 0.06640625,
+        "second_label_accuracy_drop": 0.0390625,
+        "pointer_tv_change": 0.016593903303146362
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "first_label_accuracy_drop": 0.01171875,
+        "second_label_accuracy_drop": 0.04296875,
+        "pointer_tv_change": 0.009813807904720306
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "first_label_accuracy_drop": 0.0,
+        "second_label_accuracy_drop": 0.00390625,
+        "pointer_tv_change": -0.003663286566734314
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "first_label_accuracy_drop": 0.00390625,
+        "second_label_accuracy_drop": 0.00390625,
+        "pointer_tv_change": 0.000784561038017273
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "first_label_accuracy_drop": 0.0078125,
+        "second_label_accuracy_drop": 0.0078125,
+        "pointer_tv_change": 0.0015855804085731506
+      }
+    ]
+  },
+  "oracle": {
+    "diagnostic_size": 9,
+    "baseline": {
+      "first_label_nll": 0.07494713366031647,
+      "next_feature_nll": 0.7028868794441223,
+      "second_label_nll": 0.16453461349010468,
+      "pointer_tv": 0.05454886332154274,
+      "pointer_entropy": 0.6835935711860657,
+      "first_label_accuracy": 0.9609375,
+      "second_label_accuracy": 0.9453125,
+      "greedy_joint_accuracy": 0.94140625,
+      "loss": 0.31412287553151447,
+      "perplexity": 1.3690579499357818
+    },
+    "ablations": [
+      {
+        "layer": 0,
+        "head": 0,
+        "first_label_accuracy_drop": 0.1015625,
+        "second_label_accuracy_drop": 0.1015625,
+        "pointer_tv_change": 0.005377728492021561
+      },
+      {
+        "layer": 0,
+        "head": 1,
+        "first_label_accuracy_drop": 0.0,
+        "second_label_accuracy_drop": 0.0234375,
+        "pointer_tv_change": -0.0020717084407806396
+      },
+      {
+        "layer": 0,
+        "head": 2,
+        "first_label_accuracy_drop": 0.015625,
+        "second_label_accuracy_drop": 0.01953125,
+        "pointer_tv_change": 0.01566656306385994
+      },
+      {
+        "layer": 0,
+        "head": 3,
+        "first_label_accuracy_drop": 0.0,
+        "second_label_accuracy_drop": 0.01171875,
+        "pointer_tv_change": -0.004031941294670105
+      },
+      {
+        "layer": 0,
+        "head": 4,
+        "first_label_accuracy_drop": 0.03515625,
+        "second_label_accuracy_drop": 0.06640625,
+        "pointer_tv_change": 0.011653151363134384
+      },
+      {
+        "layer": 0,
+        "head": 5,
+        "first_label_accuracy_drop": 0.0390625,
+        "second_label_accuracy_drop": 0.0546875,
+        "pointer_tv_change": 0.007256221026182175
+      },
+      {
+        "layer": 0,
+        "head": 6,
+        "first_label_accuracy_drop": 0.03515625,
+        "second_label_accuracy_drop": 0.015625,
+        "pointer_tv_change": 0.004079435020685196
+      },
+      {
+        "layer": 0,
+        "head": 7,
+        "first_label_accuracy_drop": -0.0078125,
+        "second_label_accuracy_drop": 0.0078125,
+        "pointer_tv_change": -0.0033748485147953033
+      },
+      {
+        "layer": 1,
+        "head": 0,
+        "first_label_accuracy_drop": -0.0078125,
+        "second_label_accuracy_drop": 0.0,
+        "pointer_tv_change": 0.005191821604967117
+      },
+      {
+        "layer": 1,
+        "head": 1,
+        "first_label_accuracy_drop": -0.00390625,
+        "second_label_accuracy_drop": 0.00390625,
+        "pointer_tv_change": 0.01173551008105278
+      },
+      {
+        "layer": 1,
+        "head": 2,
+        "first_label_accuracy_drop": 0.00390625,
+        "second_label_accuracy_drop": 0.00390625,
+        "pointer_tv_change": 0.005350764840841293
+      },
+      {
+        "layer": 1,
+        "head": 3,
+        "first_label_accuracy_drop": 0.0,
+        "second_label_accuracy_drop": 0.00390625,
+        "pointer_tv_change": 0.008308570832014084
+      },
+      {
+        "layer": 1,
+        "head": 4,
+        "first_label_accuracy_drop": 0.0078125,
+        "second_label_accuracy_drop": 0.0234375,
+        "pointer_tv_change": 0.01643749698996544
+      },
+      {
+        "layer": 1,
+        "head": 5,
+        "first_label_accuracy_drop": -0.00390625,
+        "second_label_accuracy_drop": -0.00390625,
+        "pointer_tv_change": -0.002337563782930374
+      },
+      {
+        "layer": 1,
+        "head": 6,
+        "first_label_accuracy_drop": 0.0,
+        "second_label_accuracy_drop": 0.01171875,
+        "pointer_tv_change": 0.01519569382071495
+      },
+      {
+        "layer": 1,
+        "head": 7,
+        "first_label_accuracy_drop": 0.0,
+        "second_label_accuracy_drop": 0.00390625,
+        "pointer_tv_change": 0.00042747706174850464
+      }
+    ]
+  }
+}

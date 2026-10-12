@@ -18,12 +18,17 @@ venv/
 env/
 
 # Generated experiments, checkpoints, and tracking logs
-/runs/
-/outputs/
-/checkpoints/
+/Experiments/runs/
+/Experiments/data/
+/Experiments/outputs/
+/Experiments/checkpoints/
+/submission/runs/
+/submission/data/
+/submission/figures/
 /wandb/
 /mlruns/
 *.pt
+!/Experiments/figures/omniglot-final-evaluation-20261010/episodes.pt
 *.pth
 *.ckpt
 *.safetensors
@@ -31,7 +36,8 @@ events.out.tfevents.*
 *.log
 
 # Temporary analysis files and notebook checkpoints
-/tmp/
+/Experiments/tmp/
+/submission/tmp/
 /temp/
 .ipynb_checkpoints/
 *.tmp
@@ -41,7 +47,29 @@ events.out.tfevents.*
 # Python packaging output
 /build/
 /dist/
+/submission/build/
+/submission/dist/
 *.egg-info/
+
+# Generated presentation previews
+/Experiments/presentations/.build/
+
+# Member notebooks and the historical deck are retained locally, not published.
+/Experiments/notebooks/
+/Experiments/presentations/*.pptx
+
+# Third-party course materials and unapproved contribution drafts stay local.
+/Experiments/references/
+/Experiments/past_drafts/
+/submission/PRELIMINARY_CONTRIBUTION_STATEMENT.tex
+/submission/PRELIMINARY_CONTRIBUTION_STATEMENT.pdf
+
+# LaTeX build intermediates; keep the reviewed PDF
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.out
 
 # Local credentials and environment settings
 .env
