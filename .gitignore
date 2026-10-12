@@ -61,6 +61,7 @@ events.out.tfevents.*
 # Third-party course materials and unapproved contribution drafts stay local.
 /Experiments/references/
 /Experiments/past_drafts/
+/Experiments/writing/
 /submission/PRELIMINARY_CONTRIBUTION_STATEMENT.tex
 /submission/PRELIMINARY_CONTRIBUTION_STATEMENT.pdf
 

@@ -69,10 +69,9 @@ fixed. The 256-example test split per seed is relatively small, and this
 study was designed after an exploratory seed-0 pilot. These outcomes should
 guide mechanism tests, not serve as the final untouched evaluation.
 
-Targeted causal interventions on the separate diagnostic split have since
-been completed across the frozen base and extended checkpoints; see
-`OMNIGLOT_MECHANISM_REPORT.md`. Fix any remaining analysis choices using
-validation/diagnostic data. Then evaluate frozen selections on a newly
-generated, larger held-out test set with no further tuning. The
-existing token-study figures are historical and must not be mixed with these
-Omniglot-feature estimates.
+Targeted causal interventions on the separate diagnostic split were completed
+across the frozen base and extended checkpoints; see
+`OMNIGLOT_MECHANISM_REPORT.md`. The later locked, larger held-out evaluation
+is recorded in `OMNIGLOT_FINAL_EVALUATION_REPORT.md`. The existing token-study
+figures are historical and must not be mixed with these Omniglot-feature
+estimates.

@@ -77,7 +77,7 @@ Patching is localized to context-label positions in layer 1 and the query
 position in layer 2; it does not recover an entire computational graph.
 Normalized restoration is not a proportion of task accuracy. The analysis
 does not show a unique causal pathway, nor does it explain every output shift.
-The next empirical step is to freeze model/protocol choices and evaluate the
-selected checkpoints on a new, larger held-out test set without further
-tuning. Keep attention heatmaps or embedding geometry as optional supporting
+The frozen checkpoints were subsequently evaluated on a new, larger held-out
+test set without further tuning; see `OMNIGLOT_FINAL_EVALUATION_REPORT.md`.
+Keep attention heatmaps or embedding geometry as optional supporting
 diagnostics unless they answer a specific remaining mechanism question.

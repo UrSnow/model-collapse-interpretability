@@ -17,7 +17,9 @@ We run package commands from inside the relevant folder. Local virtual
 environments, when present, remain at the workspace root and are not part of
 either package.
 
-The course brief, paper copy, and template in `Experiments/references/` are
-local references, not files to publish or submit as our own work. Our code
+The course brief, paper copy, and older abstract draft in
+`Experiments/references/` are local references, not files to publish or submit
+as our own work. The official Moodle abstract template is not yet in this
+workspace. Our code
 uses the published feature data through a checksum-verified download; it does
 not redistribute that dataset or the paper authors' source code.

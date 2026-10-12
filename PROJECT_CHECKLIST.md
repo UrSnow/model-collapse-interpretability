@@ -268,10 +268,14 @@ with member-approved attribution in the contribution statement.
 
 ## Step 5: Write the extended abstract
 
-Status: pending the development and results gate. Step reports are working
-research notes, not the submission.
+Status: an aligned working draft is in the local, ignored
+`Experiments/writing/` folder. The official Moodle template and ethics
+questionnaire are not yet in this workspace. Step reports and the older
+discrete-symbol DOCX are not submission material.
 
 - [ ] Obtain the official extended-abstract template from Moodle.
+- [x] Draft the question, methods, supported final findings, limitations,
+  figure choice, and verified primary references from the aligned runs.
 - [ ] Choose one clear research question and the strongest supported findings.
 - [ ] Write concise introduction and relevant background with verified citations.
 - [ ] Describe architecture, data, splits, generation policy, controls, tuning,
