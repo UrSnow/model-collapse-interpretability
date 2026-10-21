@@ -32,19 +32,21 @@ Python 3.13.12, PyTorch 2.14.0+cpu, NumPy 2.5.2, h5py 3.16.0, and
 Matplotlib 3.11.1 in WSL. Our local virtual environment is at ../.venv-wsl;
 it is not part of the submitted package.
 We also verified a fresh WSL Python 3.13 environment with PyTorch 2.14.0+cpu,
-NumPy 2.5.4, h5py 3.16.0, and Matplotlib 3.11.2: all 20 tests and both
-two-generation, ten-step real-feature smoke chains passed. These short runs
-check execution, not scientific convergence.
+NumPy 2.5.4, h5py 3.16.0, and Matplotlib 3.11.2: all tests then present and
+both two-generation, ten-step real-feature smoke chains passed. These short
+runs check execution, not scientific convergence. The current suite has 25
+tests.
 
     python -m pip install -r requirements.txt
     python -m unittest discover -s tests -v
     python -m project1.omniglot_download
 
 The downloader verifies the published Omniglot feature file against a fixed
-SHA-256 checksum. See RUN_STEPS.md for a small smoke run, both controlled
-studies, the mechanistic analysis, and the fresh final evaluation. The full
-study trains 30 three-generation chains, so it is substantially more costly
-than the tests or smoke run.
+SHA-256 checksum. See RUN_STEPS.md for a small smoke run, the
+validation-loss hyperparameter sweep, both controlled studies, training
+dynamics, attention and embedding inspection, the mechanistic analysis, and
+the fresh final evaluation. The tuned study trains 30 ten-generation chains,
+so it is substantially more costly than the tests or smoke run.
 
 Our PyTorch code implements the task and configuration
 described by Singh et al. (2024). We download their published preprocessed

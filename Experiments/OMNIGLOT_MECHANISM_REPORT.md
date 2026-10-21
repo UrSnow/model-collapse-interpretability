@@ -1,5 +1,8 @@
 # Omniglot Mechanistic Diagnostics
 
+> **Superseded (20 Oct 2026):** the primary results are now the tuned ten-generation study in
+> `OMNIGLOT_TUNED_STUDY_REPORT.md`. Numbers below describe the three-generation pilot only.
+
 ## Question and method
 
 Do recursive synthetic labels weaken the in-context retrieval mechanism, or

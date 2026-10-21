@@ -1,0 +1,7 @@
+{
+  "checkpoint_count": 300,
+  "evaluated_rows": 300,
+  "paired_rows": 250,
+  "final_unique_prompts": 5120,
+  "prior_overlap": 0
+}

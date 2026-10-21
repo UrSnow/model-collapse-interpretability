@@ -1,0 +1,32 @@
+{
+  "study_config": {
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "conditions": {
+      "clean": 0.0,
+      "feedback": 1.0
+    },
+    "settings": {
+      "generations": 10,
+      "steps": 5000,
+      "train_size": 4096,
+      "eval_size": 256,
+      "batch_size": 64,
+      "eval_every": 100,
+      "learning_rate": 0.001,
+      "temperature": 1.0,
+      "oracle_resample_objective": "sampled"
+    }
+  },
+  "audited_seed_count": 5,
+  "matched_conditions_per_seed": [
+    "clean",
+    "feedback"
+  ],
+  "per_run_rows": 100
+}

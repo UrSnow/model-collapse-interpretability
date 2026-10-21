@@ -5,8 +5,10 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 import subprocess
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from statistics import mean, stdev
 
@@ -21,32 +23,57 @@ CONDITIONS = {
     "oracle": (1.0, "oracle"),
 }
 SEEDS = (0, 1, 2, 3, 4)
-SETTINGS = {
-    "generations": 3,
-    "steps": 1000,
-    "train_size": 4096,
-    "eval_size": 256,
-    "batch_size": 64,
-    "eval_every": 100,
-    "learning_rate": 3e-4,
-    "temperature": 1.0,
-    "oracle_resample_objective": "sampled",
+# "pilot" is the original three-generation study. "tuned" uses the learning
+# rate and update budget selected on generation-0 validation loss by
+# project1.omniglot_sweep, and runs ten generations.
+PROTOCOLS = {
+    "pilot": {
+        "generations": 3,
+        "steps": 1000,
+        "train_size": 4096,
+        "eval_size": 256,
+        "batch_size": 64,
+        "eval_every": 100,
+        "learning_rate": 3e-4,
+        "temperature": 1.0,
+        "oracle_resample_objective": "sampled",
+    },
+    "tuned": {
+        "generations": 10,
+        "steps": 5000,
+        "train_size": 4096,
+        "eval_size": 256,
+        "batch_size": 64,
+        "eval_every": 100,
+        "learning_rate": 1e-3,
+        "temperature": 1.0,
+        "oracle_resample_objective": "sampled",
+    },
 }
+SETTINGS = PROTOCOLS["tuned"]
 MATCH_EXCEPT = {"output_dir", "synthetic_fraction", "feedback_source"}
 METRICS = ("first_label_accuracy", "second_label_accuracy", "greedy_joint_accuracy",
            "first_label_nll", "second_label_nll", "next_feature_nll", "pointer_tv")
 
 
-def study_config() -> dict:
+def study_config(protocol: str = "tuned") -> dict:
     return {"seeds": list(SEEDS), "conditions": {name: {"synthetic_fraction": fraction,
              "feedback_source": source} for name, (fraction, source) in CONDITIONS.items()},
-            "settings": SETTINGS}
+            "settings": PROTOCOLS[protocol]}
 
 
-def run_chains(root: Path) -> None:
+def locked_settings(root: Path, config_function=study_config) -> dict:
+    """Return the settings of the locked protocol recorded in a study directory."""
+    config = json.loads((root / "study_config.json").read_text(encoding="utf-8"))
+    for protocol in PROTOCOLS:
+        if config == config_function(protocol):
+            return PROTOCOLS[protocol]
+    raise ValueError("Study configuration differs from every locked protocol")
+
+
+def prepare_root(root: Path, config: dict) -> None:
     root.mkdir(parents=True, exist_ok=True)
     config_path = root / "study_config.json"
-    config = study_config()
     if config_path.exists():
         if json.loads(config_path.read_text(encoding="utf-8")) != config:
             raise ValueError("Existing study configuration differs")
@@ -54,35 +81,59 @@ def run_chains(root: Path) -> None:
         if any(root.iterdir()):
             raise ValueError("Study directory is not empty and has no configuration")
         write_json(config_path, config)
+
+
+def run_commands(jobs: list[tuple[str, Path, list[str]]], workers: int, threads: int) -> None:
+    """Train independent chains in parallel; generations within a chain stay sequential."""
+    env = {**os.environ, "OMP_NUM_THREADS": str(threads), "MKL_NUM_THREADS": str(threads)}
+
+    def train(job: tuple[str, Path, list[str]]) -> None:
+        label, folder, command = job
+        if (folder / "summary.json").is_file():
+            print(f"Already complete: {label}", flush=True)
+            return
+        if folder.exists():
+            raise ValueError(f"Incomplete run needs manual review: {folder}")
+        folder.parent.mkdir(parents=True, exist_ok=True)
+        print(f"Training {label}", flush=True)
+        with folder.with_suffix(".log").open("w", encoding="utf-8") as stream:
+            subprocess.run(command, check=True, stdout=stream, stderr=subprocess.STDOUT, env=env)
+        print(f"Completed {label}", flush=True)
+
+    with ThreadPoolExecutor(workers) as pool:
+        for future in [pool.submit(train, job) for job in jobs]:
+            future.result()
+
+
+def run_chains(root: Path, protocol: str = "tuned", workers: int = 1, threads: int = 1,
+               feature_file: Path = Path("data/omniglot_resnet18_randomized_order_s0.h5")) -> None:
+    prepare_root(root, study_config(protocol))
+    settings = PROTOCOLS[protocol]
+    jobs = []
     for seed in SEEDS:
         for condition, (fraction, source) in CONDITIONS.items():
             folder = root / f"seed-{seed:02d}" / condition
-            if (folder / "summary.json").is_file():
-                print(f"Already complete: seed {seed}, {condition}", flush=True)
-                continue
-            if folder.exists():
-                raise ValueError(f"Incomplete run needs manual review: {folder}")
-            folder.parent.mkdir(parents=True, exist_ok=True)
-            command = [sys.executable, "-m", "project1.omniglot_extended",
-                       "--output-dir", str(folder), "--seed", str(seed),
-                       "--generations", str(SETTINGS["generations"]),
-                       "--steps", str(SETTINGS["steps"]),
-                       "--train-size", str(SETTINGS["train_size"]),
-                       "--eval-size", str(SETTINGS["eval_size"]),
-                       "--batch-size", str(SETTINGS["batch_size"]),
-                       "--eval-every", str(SETTINGS["eval_every"]),
-                       "--learning-rate", str(SETTINGS["learning_rate"]),
-                       "--temperature", str(SETTINGS["temperature"]),
-                       "--synthetic-fraction", str(fraction),
-                       "--feedback-source", source,
-                       "--oracle-resample-objective", SETTINGS["oracle_resample_objective"]]
-            print(f"Training seed {seed}, {condition}", flush=True)
-            with (folder.parent / f"{condition}.log").open("w", encoding="utf-8") as stream:
-                subprocess.run(command, check=True, stdout=stream, stderr=subprocess.STDOUT)
-            print(f"Completed seed {seed}, {condition}", flush=True)
+            jobs.append((f"seed {seed}, {condition}", folder, [
+                sys.executable, "-m", "project1.omniglot_extended",
+                "--feature-file", str(feature_file.resolve()),
+                "--output-dir", str(folder), "--seed", str(seed),
+                "--generations", str(settings["generations"]),
+                "--steps", str(settings["steps"]),
+                "--train-size", str(settings["train_size"]),
+                "--eval-size", str(settings["eval_size"]),
+                "--batch-size", str(settings["batch_size"]),
+                "--eval-every", str(settings["eval_every"]),
+                "--learning-rate", str(settings["learning_rate"]),
+                "--temperature", str(settings["temperature"]),
+                "--synthetic-fraction", str(fraction),
+                "--feedback-source", source,
+                "--oracle-resample-objective", settings["oracle_resample_objective"]]))
+    run_commands(jobs, workers, threads)
 
 
-def audit_seed(root: Path, seed: int) -> dict[str, list[dict]]:
+def audit_seed(root: Path, seed: int, generations: int | None = None) -> dict[str, list[dict]]:
+    if generations is None:
+        generations = locked_settings(root)["generations"]
     paths = {name: root / f"seed-{seed:02d}" / name for name in CONDITIONS}
     protocols = {name: json.loads((path / "protocol.json").read_text(encoding="utf-8"))
                  for name, path in paths.items()}
@@ -104,19 +155,17 @@ def audit_seed(root: Path, seed: int) -> dict[str, list[dict]]:
     summaries = {name: json.loads((path / "summary.json").read_text(encoding="utf-8"))
                  for name, path in paths.items()}
     for name, values in summaries.items():
-        if len(values) != SETTINGS["generations"] or [row["generation"] for row in values] != [0, 1, 2]:
+        if [row["generation"] for row in values] != list(range(generations)):
             raise ValueError(f"Seed {seed} incomplete summary: {name}")
     return summaries
 
 
 def collect_rows(root: Path) -> tuple[list[dict], list[dict]]:
-    config = json.loads((root / "study_config.json").read_text(encoding="utf-8"))
-    if config != study_config():
-        raise ValueError("Study configuration differs from the locked protocol")
+    generations = locked_settings(root)["generations"]
     rows = []
     paired = []
     for seed in SEEDS:
-        summaries = audit_seed(root, seed)
+        summaries = audit_seed(root, seed, generations)
         for condition, values in summaries.items():
             for summary in values:
                 row = {"seed": seed, "condition": condition,
@@ -146,8 +195,9 @@ def collect_rows(root: Path) -> tuple[list[dict], list[dict]]:
 def aggregate(rows: list[dict], keys: tuple[str, ...],
               conditions: tuple[str, ...] = tuple(CONDITIONS)) -> list[dict]:
     result = []
+    generations = max(row["generation"] for row in rows) + 1
     for condition in conditions:
-        for generation in range(SETTINGS["generations"]):
+        for generation in range(generations):
             selected = [row for row in rows if row["condition"] == condition
                         and row["generation"] == generation]
             if len(selected) != len(SEEDS):
@@ -166,6 +216,7 @@ def write_csv(path: Path, rows: list[dict]) -> None:
 
 
 def analyze(root: Path, output: Path) -> None:
+    settings = locked_settings(root)
     rows, paired = collect_rows(root)
     indexed = {(row["seed"], row["condition"], row["generation"]): row for row in rows}
     from_g0 = []
@@ -177,7 +228,7 @@ def analyze(root: Path, output: Path) -> None:
                            for key in (*METRICS, "class_entropy", "class_tv")}})
     contrasts = []
     for seed in SEEDS:
-        for generation in range(SETTINGS["generations"]):
+        for generation in range(settings["generations"]):
             feedback = indexed[seed, "feedback", generation]
             oracle = indexed[seed, "oracle", generation]
             contrasts.append({"seed": seed, "condition": "feedback_minus_oracle",
@@ -200,7 +251,8 @@ def analyze(root: Path, output: Path) -> None:
                          ("feedback_vs_oracle", contrasts),
                          ("feedback_vs_oracle_aggregate", contrast_aggregate)):
         write_csv(output / f"{name}.csv", values)
-    write_json(output / "audit.json", {"study_config": study_config(),
+    write_json(output / "audit.json", {"study_config": json.loads(
+                                           (root / "study_config.json").read_text(encoding="utf-8")),
                                        "audited_seed_count": len(SEEDS),
                                        "matched_conditions_per_seed": list(CONDITIONS),
                                        "per_run_rows": len(rows)})
@@ -222,7 +274,7 @@ def analyze(root: Path, output: Path) -> None:
                               [y + s for y, s in zip(ys, sd)], alpha=0.12)
     for axis, (_, title, ylabel, limits) in zip(axes, panels):
         axis.set(title=title, xlabel="Generation", ylabel=ylabel, ylim=limits)
-        axis.set_xticks(range(SETTINGS["generations"]))
+        axis.set_xticks(range(settings["generations"]))
         axis.grid(alpha=0.2)
     axes[0].legend(frameon=False, fontsize=8)
     figure.savefig(output / "comparison.png", dpi=180)
@@ -235,10 +287,15 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--runs-dir", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--feature-file", type=Path,
+                        default=Path("data/omniglot_resnet18_randomized_order_s0.h5"))
+    parser.add_argument("--protocol", choices=tuple(PROTOCOLS), default="tuned")
+    parser.add_argument("--workers", type=int, default=1)
+    parser.add_argument("--threads", type=int, default=1)
     parser.add_argument("--analyze-only", action="store_true")
     args = parser.parse_args()
     if not args.analyze_only:
-        run_chains(args.runs_dir)
+        run_chains(args.runs_dir, args.protocol, args.workers, args.threads, args.feature_file)
     analyze(args.runs_dir, args.output_dir)
 
 

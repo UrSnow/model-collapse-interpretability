@@ -1,0 +1,2497 @@
+{
+  "status": "frozen checkpoints; no training or checkpoint selection on final episodes",
+  "size_per_seed": 1024,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "feature_sha256": "a8b8fa1f25d62e077b658c590f77e24447894fa325d97651dba22c6621e62b5b",
+  "study_settings": {
+    "generations": 10,
+    "steps": 5000,
+    "train_size": 4096,
+    "eval_size": 256,
+    "batch_size": 64,
+    "eval_every": 100,
+    "learning_rate": 0.001,
+    "temperature": 1.0,
+    "oracle_resample_objective": "sampled"
+  },
+  "episode_manifest_sha256": "2ae03be41bb19623407438c723a1e0b159b32654db5752a87640c2b174497bf7",
+  "replay_manifest": null,
+  "episode_seed_policy": "700000 + study seed; pointer seed 800000 + study seed",
+  "exclusion_policy": "exact ordered class IDs plus two context labels; all prior Omniglot test splits",
+  "excluded_unique_prompts": 6426,
+  "prior_sources": [
+    {
+      "path": "../Experiments/runs/omniglot-base-clean-adam-seed0/splits.pt",
+      "sha256": "85b7ab30517af4739d29d30b1a94dd11b413f172590e2ba449d0fbf07ad6b817",
+      "test_episodes": 256
+    },
+    {
+      "path": "../Experiments/runs/omniglot-base-study-20261009/seed-01/clean/splits.pt",
+      "sha256": "431d323b239d1ddf78c34397d03060c55d7c8ebd05d0249ab70fc0ccccfb86d2",
+      "test_episodes": 256
+    },
+    {
+      "path": "../Experiments/runs/omniglot-base-study-20261009/seed-02/clean/splits.pt",
+      "sha256": "a5b65a21b2452a64c41c62eeb079d0832a550830ae9f923974459fd097068705",
+      "test_episodes": 256
+    },
+    {
+      "path": "../Experiments/runs/omniglot-base-study-20261009/seed-03/clean/splits.pt",
+      "sha256": "760d536a97e45392807499f851e83f01eb64f656e9e56d92976910b23c2bdf96",
+      "test_episodes": 256
+    },
+    {
+      "path": "../Experiments/runs/omniglot-base-study-20261009/seed-04/clean/splits.pt",
+      "sha256": "cc20f3677b83f676811dc96fffdc1329dbaa1daf0b74bcb651ebd992d719c296",
+      "test_episodes": 256
+    },
+    {
+      "path": "../Experiments/runs/omniglot-extended-calibration-seed0/splits.pt",
+      "sha256": "65f9e71f503698967e92d52225a34de42cee1deb4fb876b1c56e334a5b673baa",
+      "test_episodes": 256
+    },
+    {
+      "path": "../Experiments/runs/omniglot-extended-smoke-20261009/splits.pt",
+      "sha256": "ab7e5cf59a9d712248bd600fd6a9be795d7c7713869c0e5fb44e57fc67262a8c",
+      "test_episodes": 32
+    },
+    {
+      "path": "../Experiments/runs/omniglot-extended-study-20261009/seed-01/clean/splits.pt",
+      "sha256": "1df3b836916f9b41c36f2501e8c4cb268afd50418c6d1543374b1f87835d3bb4",
+      "test_episodes": 256
+    },
+    {
+      "path": "../Experiments/runs/omniglot-extended-study-20261009/seed-02/clean/splits.pt",
+      "sha256": "351ba04a2e4a1ebf5ffa42a0d2474acc3e561624ed623e9f5f9519e3b95da972",
+      "test_episodes": 256
+    },
+    {
+      "path": "../Experiments/runs/omniglot-extended-study-20261009/seed-03/clean/splits.pt",
+      "sha256": "db705088b6accfb56a09d3ede8cf6c04c1ff690046e79962e20c8d93f0feee91",
+      "test_episodes": 256
+    },
+    {
+      "path": "../Experiments/runs/omniglot-extended-study-20261009/seed-04/clean/splits.pt",
+      "sha256": "edd2b05346f87741da4e8288747e121bb4de58f7bd218575254bb6b5c69e75e4",
+      "test_episodes": 256
+    },
+    {
+      "path": "../Experiments/runs/omniglot-feature-smoke-20261009/splits.pt",
+      "sha256": "003f8be263c690ca421fa3d343b9acbe0c892e5b2bb5b9652a8c040733dd2f99",
+      "test_episodes": 32
+    },
+    {
+      "path": "../Experiments/figures/omniglot-final-evaluation-20261010/episodes.pt",
+      "sha256": "4744cede59b96a3e1ccbf8e16c62eb5d96b88872a1d52842f8e5557386b583e2",
+      "kind": "earlier final-evaluation manifest"
+    }
+  ],
+  "checkpoints": [
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/clean/generation-000/best_model.pt",
+      "sha256": "070dd611fc673a2d1eb7df3cc901b350df37847c9783fcc866e974f5778cf140"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/clean/generation-001/best_model.pt",
+      "sha256": "f4d392613683d8e92318983547dd4a077611656d3c80d9a502298c1b89191b7e"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/clean/generation-002/best_model.pt",
+      "sha256": "58dbb8edab07740db6940cc8dfe774ae91dc17400900a31fe6a92de84f8e3dba"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/clean/generation-003/best_model.pt",
+      "sha256": "91e4e76138dc20d43d4f29eb6d093b090c31dcf01bcec8fe583f1ee297167497"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/clean/generation-004/best_model.pt",
+      "sha256": "83a7fc27129e5517ae44283cc8d00435e6698315c2c0ec138e8559eb0509bc06"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/clean/generation-005/best_model.pt",
+      "sha256": "f8722a57e445979a00875e4f88290ae7423c99931db40a14a3d33ea45ad77092"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/clean/generation-006/best_model.pt",
+      "sha256": "fe4d6a961f5417a58add7c8bf5d16f284fd42934c1791d42cf0a210afd6cf090"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/clean/generation-007/best_model.pt",
+      "sha256": "c4e5535d3b4b9806b419e56b420a40a8b72ea8beb91cbfc369003981e00f3dff"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/clean/generation-008/best_model.pt",
+      "sha256": "9253857fed7e14953b54aaa8994d99642819146562e7faad18067306353e6032"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/clean/generation-009/best_model.pt",
+      "sha256": "a2264e1d0b618a467cecbc69f7832be895ed00e887be59b9ae535ea26cdd4add"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/feedback/generation-000/best_model.pt",
+      "sha256": "070dd611fc673a2d1eb7df3cc901b350df37847c9783fcc866e974f5778cf140"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/feedback/generation-001/best_model.pt",
+      "sha256": "f4d392613683d8e92318983547dd4a077611656d3c80d9a502298c1b89191b7e"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/feedback/generation-002/best_model.pt",
+      "sha256": "3b66e85d864055bbacdcf3b5d9d76ed063f2d6dfca088df30883af76c1a86cd8"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/feedback/generation-003/best_model.pt",
+      "sha256": "2d58849dd06a24546107d4d6d4761c323b8953a8f69866d2579590caa661b1a4"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/feedback/generation-004/best_model.pt",
+      "sha256": "beed09317b09465f976f76b2eb66627854a4aad7e6c035a13c2c78e8d3f9c475"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/feedback/generation-005/best_model.pt",
+      "sha256": "64fb116b1675f470a803c1fcc3a48d078010c82a1a8b6bf15f6a677a9d82d62c"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/feedback/generation-006/best_model.pt",
+      "sha256": "84b352d8d71280fdebc405f6d213a420cb2bda7c6b2092cc46d8a765b2507ed8"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/feedback/generation-007/best_model.pt",
+      "sha256": "e3458cbd2f29d981aad5310845f71c5af95d1f63fe8c03a757dc7088f1ace446"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/feedback/generation-008/best_model.pt",
+      "sha256": "544aa831e80719560989924904f32952c9f2521801f872660b593b57df761f2c"
+    },
+    {
+      "family": "base",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-00/feedback/generation-009/best_model.pt",
+      "sha256": "49c0dba41116866b670ff5e852d46d12f498898a8c75a5ebf9827c68e98356ff"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/clean/generation-000/best_model.pt",
+      "sha256": "a7eee62ead7bf0fbb61296c01e761dc0be94bf396c152541f6a5fae7738a82b0"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/clean/generation-001/best_model.pt",
+      "sha256": "e99a3841ce506394f3e0a8c1d5c11554ddfb874b267a87337cefbdd3293cd099"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/clean/generation-002/best_model.pt",
+      "sha256": "29c3d9624b7fe9a3aec6447ba1e6b03653a3f6b6e10604cb56eb3d8b6fc0a03d"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/clean/generation-003/best_model.pt",
+      "sha256": "7e96e36d7a3fb447a4fbc3cd7d5a071e71e98ef7cfa32b7ea9aa64544f2ad505"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/clean/generation-004/best_model.pt",
+      "sha256": "68ac216cbfefaf81660f39f3d1914c0b6220aebb3e9ca502d570e88f8ba6e941"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/clean/generation-005/best_model.pt",
+      "sha256": "b78c1e608afa60cb62726a6b3fae3acf467051b665dde74e28c410d8ce09f83c"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/clean/generation-006/best_model.pt",
+      "sha256": "22af4b4a63030136292829112658ec86c26e88f87bdebc47c7fa51be8e506e6b"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/clean/generation-007/best_model.pt",
+      "sha256": "9dd74f2b59f6862ce812e0f7ea027a6659be6814e32b2e3d100c2f781001a48b"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/clean/generation-008/best_model.pt",
+      "sha256": "6c8dc8c091e67e5b144193a22003133f98f13c3bd1460ac2317851de138834f8"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/clean/generation-009/best_model.pt",
+      "sha256": "c5c421a023f8957eeb291e0f6cac59a8c444918e45acc50efe858737b0b13565"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/feedback/generation-000/best_model.pt",
+      "sha256": "a7eee62ead7bf0fbb61296c01e761dc0be94bf396c152541f6a5fae7738a82b0"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/feedback/generation-001/best_model.pt",
+      "sha256": "064040e9be7abf3f23eb4d607df0f141d1eb288b5953d7d54d5d0e6c9893a649"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/feedback/generation-002/best_model.pt",
+      "sha256": "4067b39a5c9e1b40bd9be06a53f0775bb78f19f66ee5525fdc92c3d34eaa4926"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/feedback/generation-003/best_model.pt",
+      "sha256": "4fbf5378d71c8c2eb852667e0ffe88691cd6bda73214e2ee7e0267bc4cb1f4bd"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/feedback/generation-004/best_model.pt",
+      "sha256": "1dd619d57cb8ca607b6f01bbd998954c0404f1e8e54a4b9cd4421c2dc32008f5"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/feedback/generation-005/best_model.pt",
+      "sha256": "b9d9f14a957d3a727e49b74e7f078e297d2b85757c897c9d27aa08894547c4fc"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/feedback/generation-006/best_model.pt",
+      "sha256": "d7c6097c08a85bbad0be2f869f001afcbe2a85fc30ebf17f27251d7256891734"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/feedback/generation-007/best_model.pt",
+      "sha256": "3d381ea18a35162104176a10723a7331e177adcf77f2863418839cf4dac4f435"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/feedback/generation-008/best_model.pt",
+      "sha256": "0de5f99b4cfa509edeba89606891fa15670f734fd64b625dc57fa7eaacf997a9"
+    },
+    {
+      "family": "base",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-01/feedback/generation-009/best_model.pt",
+      "sha256": "a5baa1b7d6ab68c6d077aee26c6ee90e8e775f3c52665cc4b22dfd4eacff3ef8"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/clean/generation-000/best_model.pt",
+      "sha256": "41bcc9b2b6f5c7762a1289a5fffbdb7213594bd49dbab7c8d385c78e7f61f4a4"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/clean/generation-001/best_model.pt",
+      "sha256": "a52e0826272228045432621871bcb6b84a5a2dad27e9257efcdbda1029874865"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/clean/generation-002/best_model.pt",
+      "sha256": "c5fe8b8c6b18c21f2581b2091b0d6aa8bbeaae7294468ff316f224ac7f557634"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/clean/generation-003/best_model.pt",
+      "sha256": "39cf28d50a3493b557c3e43e116fc7e8f41ccffce4d66850e70fa349c70511ca"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/clean/generation-004/best_model.pt",
+      "sha256": "778285804617188085cf04e9293afe9b6edb0a4d56ff6989a81848df311d163e"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/clean/generation-005/best_model.pt",
+      "sha256": "32ac8b1bc68c441cc6bc85f0222b282cdc68acea0346a0f953dcee661cf9c50f"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/clean/generation-006/best_model.pt",
+      "sha256": "3aa29265f1ed3e6c1d6b4e84d290a19d2a2846c47ccc4c1a061f65285df18dbe"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/clean/generation-007/best_model.pt",
+      "sha256": "dce96a56458ba6a8f6f542232184377ad06ca31d9a1d5f453a8a1c30f35eb163"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/clean/generation-008/best_model.pt",
+      "sha256": "5cb01abc4acddaa0fee028d60549141c2f1dc7377307d8125cbf8876e121eb3d"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/clean/generation-009/best_model.pt",
+      "sha256": "a3d80125ad17a8b9d355181274984337a97c83afd89c4e98eb5dd81aec7ea968"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/feedback/generation-000/best_model.pt",
+      "sha256": "41bcc9b2b6f5c7762a1289a5fffbdb7213594bd49dbab7c8d385c78e7f61f4a4"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/feedback/generation-001/best_model.pt",
+      "sha256": "c6556186934267815ccf58c61286fed915c90648e62a4bf0c02e71b8f019f59f"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/feedback/generation-002/best_model.pt",
+      "sha256": "723a8b6bd15ff2c94681efeeae9eca7075712aae8c9785d51b273690706e948d"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/feedback/generation-003/best_model.pt",
+      "sha256": "7488b507876254239f17bb06104d57d2081db1d46a01b9660368a72d947630fe"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/feedback/generation-004/best_model.pt",
+      "sha256": "60789197e689578410b0ff8b5ab0855b64fda9c17ab20fc9f9428d2a2e105e1c"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/feedback/generation-005/best_model.pt",
+      "sha256": "d7efca0da0a01a5a7c3181c706ca391e2e44860409bfb989d583e24a4d5ab7f0"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/feedback/generation-006/best_model.pt",
+      "sha256": "c19892ae059ae688fe7136ce7e20e6257bb3182612e60998e1a06307212d6f8a"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/feedback/generation-007/best_model.pt",
+      "sha256": "7aa41b77b2d18501c6c81924ba21574df6867a011f1f6e4ef8ce4ba76213315d"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/feedback/generation-008/best_model.pt",
+      "sha256": "4587a6bcd81710c89e6b6e111affad533aafbba741782359e6eacf21c58eeb54"
+    },
+    {
+      "family": "base",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-02/feedback/generation-009/best_model.pt",
+      "sha256": "d2b4de88ea3e4b80c1faf207c264afa608b40f472ef1bf096d758f2d09b1f863"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/clean/generation-000/best_model.pt",
+      "sha256": "510c0d6ca00afdc01f5b04ea8b8e6d893cb4d6b5eed8dd94edcbe3b02949b6c4"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/clean/generation-001/best_model.pt",
+      "sha256": "f192bc23a45f450fafd73fa017f34f398e7af1ad436214ac2ebfeb44b6d82c17"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/clean/generation-002/best_model.pt",
+      "sha256": "528750250d22724b07869bacd4836d00d7f7624fafa9240db424ca33b871b150"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/clean/generation-003/best_model.pt",
+      "sha256": "b869262bd27ca63cc999f7652bebdb31fa5af661c8daee55c76111cc58ffceec"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/clean/generation-004/best_model.pt",
+      "sha256": "724981af2c8d7fa063111bf402d152391d3333dbd04a361b7f471c2c46e6edcc"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/clean/generation-005/best_model.pt",
+      "sha256": "6e648e8828d74876c57eea19fb7b2eca344ae6f4d99cfb8df925f97f2c704b1d"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/clean/generation-006/best_model.pt",
+      "sha256": "17ab6db85b2309ec9ad98263b2cf261bcbd7cb1ec8b3a01ba6551a56b8d3da3f"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/clean/generation-007/best_model.pt",
+      "sha256": "39e2c4d1fd1ad74e60bda46750e799af74a87e22b2e9058c53babcc3a11b35a0"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/clean/generation-008/best_model.pt",
+      "sha256": "b06bec0ee947e6917defa8eb2a6d97f47821713e26a0a2e4c7a36c04e7a9b430"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/clean/generation-009/best_model.pt",
+      "sha256": "4c1996e2b6c1b359b6c8824b6df3874f826f8c70394cfcd92f49687da5e13d51"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/feedback/generation-000/best_model.pt",
+      "sha256": "510c0d6ca00afdc01f5b04ea8b8e6d893cb4d6b5eed8dd94edcbe3b02949b6c4"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/feedback/generation-001/best_model.pt",
+      "sha256": "f192bc23a45f450fafd73fa017f34f398e7af1ad436214ac2ebfeb44b6d82c17"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/feedback/generation-002/best_model.pt",
+      "sha256": "528750250d22724b07869bacd4836d00d7f7624fafa9240db424ca33b871b150"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/feedback/generation-003/best_model.pt",
+      "sha256": "00745acb7294a3dd18b57c1e0466a6da6daef8f05990dae08012d60ed77ac303"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/feedback/generation-004/best_model.pt",
+      "sha256": "0d2e691cb8ff0b34bb1965065c7a899cdee38a45686b4b794d7a0818a757f733"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/feedback/generation-005/best_model.pt",
+      "sha256": "592137395873807e4704936395ccb8da21e4433af3bb1c6eb129e5e53e569858"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/feedback/generation-006/best_model.pt",
+      "sha256": "f48ed55a2487e393ac849b69473d92b3cbfdd0aab97d7ee028d52c9e106fec8a"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/feedback/generation-007/best_model.pt",
+      "sha256": "20edbff338e5b6e8fd315b159e80e061e91db71da9251ba8adbbcb89ff646686"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/feedback/generation-008/best_model.pt",
+      "sha256": "a6a2ba12c45d4376f421ce193bddc5b2d5c775fdf77a86266d206a56c882485c"
+    },
+    {
+      "family": "base",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-03/feedback/generation-009/best_model.pt",
+      "sha256": "9e37c48e7ae8ffba915331ca60176c7e16d744c0fab24cfea8a446ed49e487e1"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/clean/generation-000/best_model.pt",
+      "sha256": "d2f46cdfdd761bb9a404dfc31c688c9e1e9837c67504fb74fcc0132f7863d5c2"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/clean/generation-001/best_model.pt",
+      "sha256": "365eda088aa440cb3e88be336241c8009f90fb8f4d818b908af7193d06564d98"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/clean/generation-002/best_model.pt",
+      "sha256": "7f1cb69354db8c53af0d587ff3d6cf612c124abba48bae5ac3ae994b5d91e7b0"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/clean/generation-003/best_model.pt",
+      "sha256": "0688b3cf417d28c97afbc07d9a4d1f06edb42a28a92220f6c510d4bcd8eb0e26"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/clean/generation-004/best_model.pt",
+      "sha256": "77a758f3ca2f90caa94705caa9073f30c1cf81bc3d0418f6faf18856e1ae3d49"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/clean/generation-005/best_model.pt",
+      "sha256": "fa1083b86e9ce96f171984b4496f312474a4a0a4244ca38a393637b1ba1dccab"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/clean/generation-006/best_model.pt",
+      "sha256": "35eaac12d20cd24fc04a04563e4a0c5fd980f187aecedddcd0fd266b2fe39fa8"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/clean/generation-007/best_model.pt",
+      "sha256": "9c5210cb06c3c47d3dc36ee4fcfb402c069e9b71fcebbe329401f5113de5c162"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/clean/generation-008/best_model.pt",
+      "sha256": "9c3bdf567196f289d42c799b47b71f5cf053d982a108ad0fc2dd111fd9a6dcbe"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/clean/generation-009/best_model.pt",
+      "sha256": "a1ed281b77c431bbb6c0101383bab2f685a3e20686957e9911330c04d7b18007"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/feedback/generation-000/best_model.pt",
+      "sha256": "d2f46cdfdd761bb9a404dfc31c688c9e1e9837c67504fb74fcc0132f7863d5c2"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/feedback/generation-001/best_model.pt",
+      "sha256": "365eda088aa440cb3e88be336241c8009f90fb8f4d818b908af7193d06564d98"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/feedback/generation-002/best_model.pt",
+      "sha256": "7f1cb69354db8c53af0d587ff3d6cf612c124abba48bae5ac3ae994b5d91e7b0"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/feedback/generation-003/best_model.pt",
+      "sha256": "3cf87a6ea677af19f96ff08222130a0e6db560e0234b89af9a2fb793a65a4638"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/feedback/generation-004/best_model.pt",
+      "sha256": "885b302f3cd0c4864e9b207b6781e7dc38808c0917b656da158b3ac333be4bbe"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/feedback/generation-005/best_model.pt",
+      "sha256": "53014eafe4397df8f9dd5654d2eeee1e4c1f690b63429e1baddc293c2cadcde3"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/feedback/generation-006/best_model.pt",
+      "sha256": "b2f547d813cf4286340d11bfb7fe85eed094ab7d2257d1034e439c50a1c872c7"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/feedback/generation-007/best_model.pt",
+      "sha256": "e130c11afa6e5de568bbd0981e49b29c74ce1262a45b0ee6d61134d4dfb2d8ea"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/feedback/generation-008/best_model.pt",
+      "sha256": "57ff385bb4f3fecccd5158b6d50d425f66bd340343bde33f8df9c58914611ca8"
+    },
+    {
+      "family": "base",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-base-tuned-20261020/seed-04/feedback/generation-009/best_model.pt",
+      "sha256": "35ef7cfa7ab4e846ec34717ea7874e22317ef2c9df48dedde54f32d02519ac15"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/clean/generation-000/best_model.pt",
+      "sha256": "ff5119257756f2b457582c63ce7112bcd959b02986b7b14a421fd6a9060a3cd1"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/clean/generation-001/best_model.pt",
+      "sha256": "7cd50d804109e5797b3c316c46653f279e885e9a7e11558e3003d09eafdbd051"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/clean/generation-002/best_model.pt",
+      "sha256": "a0af91e094cebf3d5c13b7c93f734c0feeb9fabc5a49cc7032000668edab6e2e"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/clean/generation-003/best_model.pt",
+      "sha256": "74298dfabf38e2e628d9fadb5ad67c58fa5c582ab94d35ecacfd331e0a9520d5"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/clean/generation-004/best_model.pt",
+      "sha256": "b8f737a5429819bcfa5260f0e01b77e8ed292a269a97e98b0a5b47f48e873a15"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/clean/generation-005/best_model.pt",
+      "sha256": "011c451d2b82cd5e13da9d598ecffd6a0403229c966478de435289e09545bae5"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/clean/generation-006/best_model.pt",
+      "sha256": "7cbf3cd49dc4a26e2bd470e38df61486940ad47f79674349adcbbfef44cbe36e"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/clean/generation-007/best_model.pt",
+      "sha256": "e83748141f2f044411d70a5ed08769c188781a636fb2eb7e2d668ebe46d88a99"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/clean/generation-008/best_model.pt",
+      "sha256": "25bdcd691319f6ca8a51f9868327a1392c1340c5a066280c33c90caf13a88a07"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "clean",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/clean/generation-009/best_model.pt",
+      "sha256": "4eed2f8b0072e0a4a38e8b1bf6b082340aa1c1d8ddd89e78fcba736196053131"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "partial",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/partial/generation-000/best_model.pt",
+      "sha256": "ff5119257756f2b457582c63ce7112bcd959b02986b7b14a421fd6a9060a3cd1"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "partial",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/partial/generation-001/best_model.pt",
+      "sha256": "a2e993edb36646248d49b578a23164b3a939786164879fd634d8f507b1ea53ef"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "partial",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/partial/generation-002/best_model.pt",
+      "sha256": "995539489e18244e5636b35dc2a4ce50e3629141bbdba360d280aacbd5432efd"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "partial",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/partial/generation-003/best_model.pt",
+      "sha256": "2fdb0564fa31b16e11868740b5444993b4e6444a34f66c6ca786468f253929e4"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "partial",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/partial/generation-004/best_model.pt",
+      "sha256": "1dc1767da6a67e4d9e75c2e15af6949ca401c94e8cd89ce9a7b6592fbd70c8a1"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "partial",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/partial/generation-005/best_model.pt",
+      "sha256": "20eabe614d11ef5af7648be160f2cb2f21d3524f0b6a97ca6d81df678c2efa65"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "partial",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/partial/generation-006/best_model.pt",
+      "sha256": "4e0f8d13c2ad2b4e15b9f0b0a78014fe76b2de2d93a4afe2e8cd5783e80c0022"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "partial",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/partial/generation-007/best_model.pt",
+      "sha256": "b9d00ea313378fb9d670213c67b3a22d70e6868dc0d8c876ff82715f28172a28"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "partial",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/partial/generation-008/best_model.pt",
+      "sha256": "f3f5cf69af7ecb181535051e5f578716dc6d20e876ef56cae326f032668ae632"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "partial",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/partial/generation-009/best_model.pt",
+      "sha256": "58c8932b133f38a3fb307a3cdc5ddc0c5a9cbf4bc76d1efbe39b7f6964102f3e"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/feedback/generation-000/best_model.pt",
+      "sha256": "ff5119257756f2b457582c63ce7112bcd959b02986b7b14a421fd6a9060a3cd1"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/feedback/generation-001/best_model.pt",
+      "sha256": "3ce48016693fd3fff42cc7e3998663387a839a5071883c2323170ee39b78a411"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/feedback/generation-002/best_model.pt",
+      "sha256": "7e2c460d3c2e4fbc55f94d38984d8aca71f590f9bcbc3e5c29f9bad71b46cf96"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/feedback/generation-003/best_model.pt",
+      "sha256": "833bb21c7175e063ea8333a2678b0d7d425f5a8b316aea964bfdf26cfd97e5ab"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/feedback/generation-004/best_model.pt",
+      "sha256": "59c01cd3108d523eba5e2acd933bc733493d9e79e4abd085d50229775dafc0e9"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/feedback/generation-005/best_model.pt",
+      "sha256": "dfea374d714faafc36fa61676ec5f7ed066a54465f308ed3b8c915ab5f854f80"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/feedback/generation-006/best_model.pt",
+      "sha256": "50ad2fab18d2c8c9295db8d9fa48c54158fc1b62f66bbfc7b2616a4c6886322e"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/feedback/generation-007/best_model.pt",
+      "sha256": "5ee00a8995dc81513d8e1a2d9fdc46f78ae78bf93e119e5e6e09d3b4d87e24da"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/feedback/generation-008/best_model.pt",
+      "sha256": "a4900c0fb90e82bac47165019d8225387f667c58633fa3af0ee94b79d414a63a"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "feedback",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/feedback/generation-009/best_model.pt",
+      "sha256": "6296eb27383afd74927eadfb2535a76769a3606a44c3e65e838b450ed254f31f"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "oracle",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/oracle/generation-000/best_model.pt",
+      "sha256": "ff5119257756f2b457582c63ce7112bcd959b02986b7b14a421fd6a9060a3cd1"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "oracle",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/oracle/generation-001/best_model.pt",
+      "sha256": "4b17c1d723dde677536fc2aaa2f0f0138962c2816291cac432f15cfeaa6e91b9"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "oracle",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/oracle/generation-002/best_model.pt",
+      "sha256": "7240528bf2b4433ffb0e2096d71634ddb62b61305abaebf7159de635e1b79142"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "oracle",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/oracle/generation-003/best_model.pt",
+      "sha256": "bc1abafb065e47ef484cf2a7683e85fdb4bde89ad6554d35da07bfc5e241094b"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "oracle",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/oracle/generation-004/best_model.pt",
+      "sha256": "a5f3d40d872e85c33d13baf0d048e0f7e063e2e41f11a828e6149741a7648a64"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "oracle",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/oracle/generation-005/best_model.pt",
+      "sha256": "9b15316f6d01c92bd90c90ed6b945d1bdfcf991544089204d2598b7f1019b010"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "oracle",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/oracle/generation-006/best_model.pt",
+      "sha256": "50ab778ae65e181dd9d5773412a1e0b209324626ce324be497f82aa3ec46ede9"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "oracle",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/oracle/generation-007/best_model.pt",
+      "sha256": "a9bab56e04d82128f920d45999e7eb69165d655f62d020b651ddd05d3b789a85"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "oracle",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/oracle/generation-008/best_model.pt",
+      "sha256": "8a4b0729bfbe902bd6f2ec4376611008b84680ee6e63e3ffb4f5b37f1904b21f"
+    },
+    {
+      "family": "extended",
+      "seed": 0,
+      "condition": "oracle",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-00/oracle/generation-009/best_model.pt",
+      "sha256": "8aebed1fc3d53277069a012de9a94a62548f4fbbeebe7dfe3e7235fdc51632e9"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/clean/generation-000/best_model.pt",
+      "sha256": "ebfd7c2725d0c214af55210553eb4b469877cf42b8417a7de33bd97ea8d37683"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/clean/generation-001/best_model.pt",
+      "sha256": "43a4358fd9ca9941118112531900f471fe91d3defda66037d915a529643d69e4"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/clean/generation-002/best_model.pt",
+      "sha256": "43ff7c20d13a9862b2c0cd10f00708382f31b2c3e18599419192fa2a1656da9c"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/clean/generation-003/best_model.pt",
+      "sha256": "95f3cbeb6b07f718b49c44fb64e931f24310abbfa144384d866134548d8d0e68"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/clean/generation-004/best_model.pt",
+      "sha256": "6271deab9fc84bce0621f65e9e5f42d939ba2b47709ac208e44300402e1c2377"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/clean/generation-005/best_model.pt",
+      "sha256": "ac48db8e678ecc07b1a3ebdaee96ac6233da07f773eb8b34b647b468c19839ec"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/clean/generation-006/best_model.pt",
+      "sha256": "e248188a7839116439fa4597b1ccb115796be2e083a9f7ab482028d59b913a62"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/clean/generation-007/best_model.pt",
+      "sha256": "e50441c949610e0c4658b482348046bb39daec57666e13875b4524f9ff92634e"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/clean/generation-008/best_model.pt",
+      "sha256": "136c75ee1c33e1fa8d9c759d5683dd208e717f0aa362fb7920a6127cbc0249f9"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "clean",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/clean/generation-009/best_model.pt",
+      "sha256": "f24751584e4539398d39d5662cae7c78c3c8b672aa7d8e2132004f4ec1fb9ab4"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "partial",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/partial/generation-000/best_model.pt",
+      "sha256": "ebfd7c2725d0c214af55210553eb4b469877cf42b8417a7de33bd97ea8d37683"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "partial",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/partial/generation-001/best_model.pt",
+      "sha256": "7ba4f80a18349d96e389f1f14edbd2acf2bddad6760a259083097fe8bd835081"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "partial",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/partial/generation-002/best_model.pt",
+      "sha256": "3c5b4376fa0cf1c31cd3a71e0c6e32120deb81c855094aaaa7018c401c024178"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "partial",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/partial/generation-003/best_model.pt",
+      "sha256": "6f4ddb5ef706d7361dda14a18e6a2edda2c68bcd3a956118d97ef906ee7f6071"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "partial",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/partial/generation-004/best_model.pt",
+      "sha256": "7433e01802413cf4238f6cdbe369f5b9b15a208921ddd346958de28997944fff"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "partial",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/partial/generation-005/best_model.pt",
+      "sha256": "3d29553992bd16f5e32795b3c1f62e4a768a0a76d7b989c72143cea48dc38641"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "partial",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/partial/generation-006/best_model.pt",
+      "sha256": "13717736d7623d94c7232270a9ab80f488b48eb3096e7b5cf05fea5d5ce3cd14"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "partial",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/partial/generation-007/best_model.pt",
+      "sha256": "9a71d2b623dd37f01d47c2b1d2f224662a0dbc5f14454f419f1bc5e9dff0decd"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "partial",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/partial/generation-008/best_model.pt",
+      "sha256": "4d46af347a3e8f8a22e1ac6c25551136d2c6284db7cd384471693d421752ab35"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "partial",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/partial/generation-009/best_model.pt",
+      "sha256": "601f426305832f89efe40528aa9ffd481f335fec3b1ea6e332d5d9933b4d6107"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/feedback/generation-000/best_model.pt",
+      "sha256": "ebfd7c2725d0c214af55210553eb4b469877cf42b8417a7de33bd97ea8d37683"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/feedback/generation-001/best_model.pt",
+      "sha256": "e3cb080ea2bf231479639ed3456ee4f3c537debc80e81205a81b99206c60923d"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/feedback/generation-002/best_model.pt",
+      "sha256": "d7e71e11a1e4de8b98a3529a771104fe89a815805cd1b5e121cb676bbfc1485c"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/feedback/generation-003/best_model.pt",
+      "sha256": "6f98409247f0c74e1a8fa1e41c65f80ae4d8a66f6e4b9ede4a1db025b515c2c7"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/feedback/generation-004/best_model.pt",
+      "sha256": "8103cbd9142268dacdefdc69a989970f4de5567f9641c713fd4624c72e584eb9"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/feedback/generation-005/best_model.pt",
+      "sha256": "bc6fd2b7eb997bf4e5c7ad33cb2ffbe482aab94c8a726e3beb1d4725ae58d49f"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/feedback/generation-006/best_model.pt",
+      "sha256": "f053e22c0c6dfe757d5222b64904e7e06a06544ac3bf75a1f6c29aabf7e61b8c"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/feedback/generation-007/best_model.pt",
+      "sha256": "da603abc44d269b3587343188f38902d92d0eac115db5b24d2a5690e330a01cf"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/feedback/generation-008/best_model.pt",
+      "sha256": "580cebd10873ee0741c94f8305857977e47e2c8294600cb4cd675e889ac81de8"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "feedback",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/feedback/generation-009/best_model.pt",
+      "sha256": "2cbf70e7518af3a23c00cca5c0106c5eaa52b494a475b146975aeaec1afaa5a7"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "oracle",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/oracle/generation-000/best_model.pt",
+      "sha256": "ebfd7c2725d0c214af55210553eb4b469877cf42b8417a7de33bd97ea8d37683"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "oracle",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/oracle/generation-001/best_model.pt",
+      "sha256": "2749313f59e5d247a5d23be1743a0bd031c9d08d262fdbb3edd4a5df895c4eeb"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "oracle",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/oracle/generation-002/best_model.pt",
+      "sha256": "8bcb147ca20a174d98f11b6d5a27643faf12d88ad5539aaae7da17fbd445d648"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "oracle",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/oracle/generation-003/best_model.pt",
+      "sha256": "cc3f76a4c124c7d6a104891dfe502e0162e0fee07f49d861b00001e0d386d64e"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "oracle",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/oracle/generation-004/best_model.pt",
+      "sha256": "434b8fc307ccfc1af095437684b42b0c8730ac39eff112d8f4865a58d0588d71"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "oracle",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/oracle/generation-005/best_model.pt",
+      "sha256": "0e09fb52c31e3102bf726a57826ddac3dc3d2732efe8bfe9da9ea2e44a682ebd"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "oracle",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/oracle/generation-006/best_model.pt",
+      "sha256": "ddf10475138e10446ea6dea4431b13ad7855fdd8e19d542cfa230f402f4d8be3"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "oracle",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/oracle/generation-007/best_model.pt",
+      "sha256": "cc5cfccb8c2b21f7628b639e586a4c133dd2632d07fa72f075b6eca7715142ae"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "oracle",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/oracle/generation-008/best_model.pt",
+      "sha256": "a259c64fad4ffebec438bf828f8221beb00cb1bc0810d57b83e27984ca454459"
+    },
+    {
+      "family": "extended",
+      "seed": 1,
+      "condition": "oracle",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-01/oracle/generation-009/best_model.pt",
+      "sha256": "8a1a6ce203698902e1bfb48673abf7e508496ddc6ce3d1c5e4866de0e20c7669"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/clean/generation-000/best_model.pt",
+      "sha256": "878910a2d23486223e76bd2622d7810a47d7d5911c736e7693487ff2a9668f1c"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/clean/generation-001/best_model.pt",
+      "sha256": "8a2e9f3bc304210b64be6b669ab57cfa98008c6fa7594c104de03dff291a78cd"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/clean/generation-002/best_model.pt",
+      "sha256": "37c2182a130b4a61e1519b14c0edc6a4bb166a61c712de2ca784a9b2cb5c6a3d"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/clean/generation-003/best_model.pt",
+      "sha256": "aadfc05f9c2acc738de3d5574e6c8e47dfef6e30f4c34b14e4c539d76e8585c2"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/clean/generation-004/best_model.pt",
+      "sha256": "e99ff55d038d6a36b514600ef8e96cef91b489c9492ddcbb51c0369f6bb26c1b"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/clean/generation-005/best_model.pt",
+      "sha256": "0d19e4ef808870205c8c72d53091740d833f9a43ef9047520fbd846f229e4ae6"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/clean/generation-006/best_model.pt",
+      "sha256": "f01b860227bb0a9af873d12044e04b713d14db0739e7b75507f3a637a78d586e"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/clean/generation-007/best_model.pt",
+      "sha256": "10a258191487d9b8c19c702491683028dd06dd66cf47cbfbf6ca8d3b0b252b68"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/clean/generation-008/best_model.pt",
+      "sha256": "c848d0c8f38a6cbe2f53d15419b62243b5db8f1b87a6f465fb1b2ea2ff13afdd"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "clean",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/clean/generation-009/best_model.pt",
+      "sha256": "dfb8cba9ca4092300a090db358286b78a6b716230cc04c6986c97b4d40b74001"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "partial",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/partial/generation-000/best_model.pt",
+      "sha256": "878910a2d23486223e76bd2622d7810a47d7d5911c736e7693487ff2a9668f1c"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "partial",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/partial/generation-001/best_model.pt",
+      "sha256": "127d492cd210a884211ce0b4387c592cf516164643867af0438d01b8a2750953"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "partial",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/partial/generation-002/best_model.pt",
+      "sha256": "83aac9d1da40a333f2b8197d5cc5744635734d0b920951586daa10eb3e255a74"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "partial",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/partial/generation-003/best_model.pt",
+      "sha256": "ce8f15af2aea11a9a4e5ca9dcef20ab0362cd9d08cc641567f40cef8eb200f19"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "partial",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/partial/generation-004/best_model.pt",
+      "sha256": "9627db6c77495c7570fadef2130d7f745f51715358daf34a158aaac2960d1676"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "partial",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/partial/generation-005/best_model.pt",
+      "sha256": "7ccc41306fabc83276aa3e37dd300057381b1319c9ab878ec34814231af04961"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "partial",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/partial/generation-006/best_model.pt",
+      "sha256": "d209146c8970f5d0d87ff29ab7050d6ee7a5cd1f55106359555e18eaa9c3ff09"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "partial",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/partial/generation-007/best_model.pt",
+      "sha256": "2c6960a38c5c5cd863cafc285174e0d6468d51988ff747cd57fb874d8e39e8d3"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "partial",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/partial/generation-008/best_model.pt",
+      "sha256": "19023a55d226679e8d968c09fd438455eb260503a59133c04184fc67ff6a8279"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "partial",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/partial/generation-009/best_model.pt",
+      "sha256": "97f620b6ee3f17ea0a577a1f533fa2c536c429356ddbc4a4c513f70b18745e7e"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/feedback/generation-000/best_model.pt",
+      "sha256": "878910a2d23486223e76bd2622d7810a47d7d5911c736e7693487ff2a9668f1c"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/feedback/generation-001/best_model.pt",
+      "sha256": "7c999285ad66a8287a0bc9d8d1d9dc4bc5f6a807882a080762e3e45472435578"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/feedback/generation-002/best_model.pt",
+      "sha256": "5f51b62437e302141cd2a8d96f13b1535518edf7bc0629ffbb8b14231d9ff97c"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/feedback/generation-003/best_model.pt",
+      "sha256": "be6428c3ee4ed71a7f612aaae3d95681dc42739efe8cfbcc4dc14726d731ad23"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/feedback/generation-004/best_model.pt",
+      "sha256": "f19844a539c4c342425e49bc6ef6ab3c0e0694666aaa1097e4e0db6ebb557056"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/feedback/generation-005/best_model.pt",
+      "sha256": "7e2901d922028e046c19366445ca2f19e5c515323343853760c833ae2a5570d3"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/feedback/generation-006/best_model.pt",
+      "sha256": "96f1825c29724bd7c4407805cc3048ceb3152c5c0a1a6ce59f65555b2d103f72"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/feedback/generation-007/best_model.pt",
+      "sha256": "c61a18e38452b24808a531a6f9083eae4ab3ac33ea7c3f6a6bc225ab87a1ff5f"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/feedback/generation-008/best_model.pt",
+      "sha256": "558cf767e2262f8a0dfe0b0baeec81124a4e9e5f11e9620f300a3034c9f25eab"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "feedback",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/feedback/generation-009/best_model.pt",
+      "sha256": "242a47ae9f83b39df0730a96cd8ce1395cefd7e112873a769d26e04ea1479f5a"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "oracle",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/oracle/generation-000/best_model.pt",
+      "sha256": "878910a2d23486223e76bd2622d7810a47d7d5911c736e7693487ff2a9668f1c"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "oracle",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/oracle/generation-001/best_model.pt",
+      "sha256": "643d53519a7d12f7d146e468972823162a6ce007d39f1ad38bf6153b47d2cfa8"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "oracle",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/oracle/generation-002/best_model.pt",
+      "sha256": "f67aabc0c1ad9e21a3cefedb52f7871d78838e200c169587c3f6407cf62a8635"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "oracle",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/oracle/generation-003/best_model.pt",
+      "sha256": "6dd02146cd3c2235e6a6509e6f33e2adcfcefdc41863e5704f510c2babcb4e47"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "oracle",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/oracle/generation-004/best_model.pt",
+      "sha256": "cd4b5b2a35d498caede217ae69ea3bc2c4f2aad7ef1982dca2625cef01190ec8"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "oracle",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/oracle/generation-005/best_model.pt",
+      "sha256": "c2327970589891d3b602cc6d1e00e743b6f655e43e36e0e9b3744c28cc73f158"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "oracle",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/oracle/generation-006/best_model.pt",
+      "sha256": "c0fab5fcf02537e1e918ba7a71b334c17a19ea47bb3b1e2c8fa836b52eb84184"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "oracle",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/oracle/generation-007/best_model.pt",
+      "sha256": "b8b3aa0cc70bf0afae109640bd9913501d89d013267e2a2a105e67e708bb4b25"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "oracle",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/oracle/generation-008/best_model.pt",
+      "sha256": "9630a8b615de1a4e1491277b617ec8b7e4441a090333e1b750f72ea81aa416cf"
+    },
+    {
+      "family": "extended",
+      "seed": 2,
+      "condition": "oracle",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-02/oracle/generation-009/best_model.pt",
+      "sha256": "146890ba4adab2a4b87d28309f9a841241f56457a6ddc3caba455fe34290044e"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/clean/generation-000/best_model.pt",
+      "sha256": "08aa4fd8a2650dcba0ec094982e4972d3eea3b54b4e472dc4ef21da63e80e1ac"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/clean/generation-001/best_model.pt",
+      "sha256": "58e0cf2e926dd3f287d53a818e9bbfc662a4b8e1a74004c3d774c5db076e5aba"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/clean/generation-002/best_model.pt",
+      "sha256": "90343ae8083e0e757389fbaa8cedd47809aacd12dba0eec0989cad60d6af9e9c"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/clean/generation-003/best_model.pt",
+      "sha256": "e8c3e8acd504c8a7bebd7b53a1adb6ee69c7361233e2cb948687b5910ae900e6"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/clean/generation-004/best_model.pt",
+      "sha256": "68230bf0af6985c3f68ebd8e2c762dd802005b218d9ca986cbb35a33481f855f"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/clean/generation-005/best_model.pt",
+      "sha256": "162269504ff2df4908787c7832552de1cfef1da20d2b8754fd8bb64ee0d4c9f0"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/clean/generation-006/best_model.pt",
+      "sha256": "3a5e82288b2cb1e4d916dc5bbd3536a5f84db675fc72a1c6c3d8bdd0e5a7e9d7"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/clean/generation-007/best_model.pt",
+      "sha256": "e9d2b2fc8be026e3899ccc92fe25f09a9eb48823e137680cbe09543ffc6efa6b"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/clean/generation-008/best_model.pt",
+      "sha256": "417cca5a4bc7a35b57ec098a7ce1b8fd4a8db4b0d06810822618ac3965500c4e"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "clean",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/clean/generation-009/best_model.pt",
+      "sha256": "b4d27fb00a5bcae2060ac501ca803b70e282db598b066cade84e14475a47c2bb"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "partial",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/partial/generation-000/best_model.pt",
+      "sha256": "08aa4fd8a2650dcba0ec094982e4972d3eea3b54b4e472dc4ef21da63e80e1ac"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "partial",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/partial/generation-001/best_model.pt",
+      "sha256": "3e1e48533d00214c399a2a79d80ac19e7bf965a0ffe73214953e17d9bfd1923a"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "partial",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/partial/generation-002/best_model.pt",
+      "sha256": "ae4979a076335c29681f8731d5470a6ba41299b9f8b29054fbd1581d5061c12b"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "partial",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/partial/generation-003/best_model.pt",
+      "sha256": "a048b823ffe2e028ce579398d5911a2c07787f2799eb51eab4a2ded5b19cee66"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "partial",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/partial/generation-004/best_model.pt",
+      "sha256": "b317ca2150e323502cc9c67899223bcf857fff6881f20d43b8db8504d310c98b"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "partial",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/partial/generation-005/best_model.pt",
+      "sha256": "96d7afc2e36d1d81bc784f50d19bbd02c7d570c75afbbed2c51dd97c743d75c4"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "partial",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/partial/generation-006/best_model.pt",
+      "sha256": "12a5ea855640ad24d9cf6b287074934a0bc7505a1a5d3147fbb170dfafeb631a"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "partial",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/partial/generation-007/best_model.pt",
+      "sha256": "64686237fbff115ed35a26b3d2237a341cea732be976316fe94878e065ba1bdb"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "partial",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/partial/generation-008/best_model.pt",
+      "sha256": "cd205701df909f927e49bcafdc26078a57a40647b15ac2940afeb9d7816f1ba3"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "partial",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/partial/generation-009/best_model.pt",
+      "sha256": "273cf77b385ecf586e0c2334194bc787608f0652a0ea90e962cc5841e397d503"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/feedback/generation-000/best_model.pt",
+      "sha256": "08aa4fd8a2650dcba0ec094982e4972d3eea3b54b4e472dc4ef21da63e80e1ac"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/feedback/generation-001/best_model.pt",
+      "sha256": "b504443100545c5ae18e3a64568b1e1a2cdff05a6988a030099e13576880b309"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/feedback/generation-002/best_model.pt",
+      "sha256": "4d41fbee11fe895311d2328be32e38bfc0a887fb8151ab14e28899bb197519c2"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/feedback/generation-003/best_model.pt",
+      "sha256": "945f7b1b2d3d053b5b2608f90efa9581a8e644e3c76ce1f425f34fa8a2ffb84a"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/feedback/generation-004/best_model.pt",
+      "sha256": "7a4adee5a848ed6b49020e3ee6076f35293ec6de2233f113a48c76b772d347ab"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/feedback/generation-005/best_model.pt",
+      "sha256": "e02149b4dcd9f02001f93c8fa89496f4767a74eab52adfce4085637bd3b16112"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/feedback/generation-006/best_model.pt",
+      "sha256": "6858162dd2fba3cec3084061dca4cff505523c1a3b5e5ec6dbd3f2af5add9cfc"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/feedback/generation-007/best_model.pt",
+      "sha256": "78d9fe4727e9238f6c6a288dec07b37d4e07e25813aa9667a5438bc2242535ea"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/feedback/generation-008/best_model.pt",
+      "sha256": "92da2225cc8e37d874c1f85da5d835560cc0cf6137f50bf449d3d80a78519fa5"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "feedback",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/feedback/generation-009/best_model.pt",
+      "sha256": "10a0eba1e2c4aa5529c9ccc4845e5682fdcfc7efd71bd5c98bb7648e83145a94"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "oracle",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/oracle/generation-000/best_model.pt",
+      "sha256": "08aa4fd8a2650dcba0ec094982e4972d3eea3b54b4e472dc4ef21da63e80e1ac"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "oracle",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/oracle/generation-001/best_model.pt",
+      "sha256": "7aa05501b22bccc0f4b5a7af0595e497a516061b28679b749d91ccbcbdaf87f4"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "oracle",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/oracle/generation-002/best_model.pt",
+      "sha256": "96f85540f755a1945ac97e0cde9930d5dd5f1db6212c6d29b9a682ae09346db0"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "oracle",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/oracle/generation-003/best_model.pt",
+      "sha256": "c31998df211786b2265c5d4079730bb9e7d586de3209325503aab1ecab21524d"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "oracle",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/oracle/generation-004/best_model.pt",
+      "sha256": "fa3c452807ec9ff8df49a46a940b5de5e0316e972560464816b2184056a225dc"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "oracle",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/oracle/generation-005/best_model.pt",
+      "sha256": "705ff426f10be8a4f162577391353815cb6947904a680abb46d97d711be0e8c9"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "oracle",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/oracle/generation-006/best_model.pt",
+      "sha256": "afd481439c2233cb55f4375a8dc34e37626ea61a3c6e00332fab58e9fa115ae5"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "oracle",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/oracle/generation-007/best_model.pt",
+      "sha256": "e105bd13efe538210d458b8848373597b05d4d46e60758bba1ffc0d2e1587626"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "oracle",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/oracle/generation-008/best_model.pt",
+      "sha256": "d0571f4f9a23845150be34b3c4b971be339cb19350086c9356041a7b090ffdd6"
+    },
+    {
+      "family": "extended",
+      "seed": 3,
+      "condition": "oracle",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-03/oracle/generation-009/best_model.pt",
+      "sha256": "8ac3ba396c6e6052acbf3ad4c152544837298cb57a1b17cf527ba2f51e563962"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/clean/generation-000/best_model.pt",
+      "sha256": "7e252aed3d50371c3b47977415192784d3aaea45c177c553cab892008d898e6a"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/clean/generation-001/best_model.pt",
+      "sha256": "99f0ea9976d0984179df174af73486d0a519a6b9c8d675736dd8f5ea50e32a8d"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/clean/generation-002/best_model.pt",
+      "sha256": "0a7195e7772d238ef9d028fdf1bf0743f00f73b0a2ba2050267e49e1c75c7bee"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/clean/generation-003/best_model.pt",
+      "sha256": "c87b2a06c84a7cf0886604cdc73d0af1952ec604f302ae739f7ae309d18b9813"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/clean/generation-004/best_model.pt",
+      "sha256": "e003072053bd3701b8e66c41539a5a078e7f495aa115a4314d7811e64772af6f"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/clean/generation-005/best_model.pt",
+      "sha256": "b8386b9e53854f5f3b949960635708239ad5457767c1f9193f84f37f630ff8e3"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/clean/generation-006/best_model.pt",
+      "sha256": "8160c6bcbbc87e3e656539fe8b0b611041e5ee1dc15260056bc9425f18b71188"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/clean/generation-007/best_model.pt",
+      "sha256": "c0b63db49e2a62a11c267e4d395a7908801bb745f9a909888a0cd622f38f4636"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/clean/generation-008/best_model.pt",
+      "sha256": "443184b85b00dd7ad365c58cbd733abe35c0ed5b0d5dd107d42287f446289bf0"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "clean",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/clean/generation-009/best_model.pt",
+      "sha256": "de922f2092693c3fd9d376afaf92758861457e0ed574aca97134dd045a318eb4"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "partial",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/partial/generation-000/best_model.pt",
+      "sha256": "7e252aed3d50371c3b47977415192784d3aaea45c177c553cab892008d898e6a"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "partial",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/partial/generation-001/best_model.pt",
+      "sha256": "cce5fee5a74c0e62d1cf97d99b27ddb3875b218eddf5b2d08dcdd72cf03c41f3"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "partial",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/partial/generation-002/best_model.pt",
+      "sha256": "d6dff1fd9a3393a0261911445c9ac17ed782c3028fe53d9b42bc72f22fab8610"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "partial",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/partial/generation-003/best_model.pt",
+      "sha256": "49858965c6ccb3dc307094f7326a307ed9978631e754032ac7ec1d1ef2f54201"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "partial",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/partial/generation-004/best_model.pt",
+      "sha256": "77d786fdb6f557840147d3c6927fbf71b9d3ee7c1bd19b1ba61c9a89a95ec82b"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "partial",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/partial/generation-005/best_model.pt",
+      "sha256": "83b58ae5cf95ff513c38d0526b126b904f2b612301e7a6acd9c0e0ec1713368e"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "partial",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/partial/generation-006/best_model.pt",
+      "sha256": "e84650acf533c222a6216972b868dbfab1bd4eadcf0eb128516f824d0ef5eb6e"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "partial",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/partial/generation-007/best_model.pt",
+      "sha256": "de7f179bfc4cd633ce35e0b9cb01c4f4373c518383ad8b7fc8694d419b411586"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "partial",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/partial/generation-008/best_model.pt",
+      "sha256": "f8b34f36a07ae313670db35c62a387a3f2e1e68873a5a3980e173231d27b5179"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "partial",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/partial/generation-009/best_model.pt",
+      "sha256": "da21d08f7af8b6e3a8c78685ca644835d9313ba31f6f850f5959414176d06a8b"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/feedback/generation-000/best_model.pt",
+      "sha256": "7e252aed3d50371c3b47977415192784d3aaea45c177c553cab892008d898e6a"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/feedback/generation-001/best_model.pt",
+      "sha256": "8e4f5379dd274c35a75cc557315cc2584f6982fa8e5e6a4d2130d3770c47354e"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/feedback/generation-002/best_model.pt",
+      "sha256": "adaa85b109e4042edf7f77282d87cc31ac6a6723ea3cabde1ef98d8ac6d5927b"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/feedback/generation-003/best_model.pt",
+      "sha256": "ede54cad703eb5b796eee8d54f9b857d08de945987da568b8e02ea151d1bf69c"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/feedback/generation-004/best_model.pt",
+      "sha256": "fb115609c58950b91625c6a1a1b00b66fa352153dc6f4a88f24dc8f7c8edc7bb"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/feedback/generation-005/best_model.pt",
+      "sha256": "028b1375fa4bcc64e2484e67b48889776c8aaa71db69cfa6b9af0ebe063e9bd8"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/feedback/generation-006/best_model.pt",
+      "sha256": "ccf4f1b58e2ef3e0057c40fa2aa01d840b3ad251d1389c6c6a04190be27055d5"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/feedback/generation-007/best_model.pt",
+      "sha256": "569aae31c29a4f0dcf6dac42538b84814b410272d3342c29b6043562dcc81cc3"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/feedback/generation-008/best_model.pt",
+      "sha256": "180eb939b574e0105863c778848f77ca608d64504d8a92b0cec42d099637ce87"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "feedback",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/feedback/generation-009/best_model.pt",
+      "sha256": "6c06967d7bf94776b680e135d2dfb3d630ed4c4eb3321fd57c5578254e4d0030"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "oracle",
+      "generation": 0,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/oracle/generation-000/best_model.pt",
+      "sha256": "7e252aed3d50371c3b47977415192784d3aaea45c177c553cab892008d898e6a"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "oracle",
+      "generation": 1,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/oracle/generation-001/best_model.pt",
+      "sha256": "5f8fa6930293c1225be6a8d079aaa7b50990456aea5471fb0d7310f6d31b84ef"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "oracle",
+      "generation": 2,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/oracle/generation-002/best_model.pt",
+      "sha256": "adccc104c043222ddd85423ee92cfd71c88bdd6ce4d886aeda8ddb5be751a94d"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "oracle",
+      "generation": 3,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/oracle/generation-003/best_model.pt",
+      "sha256": "a060ec7070ccbb266ab2be96e13b5f88c4898b824f9cf6c6a2b225fd62c3df41"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "oracle",
+      "generation": 4,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/oracle/generation-004/best_model.pt",
+      "sha256": "7845cd16362be6e11b0f571a9aeb0dd0df02f8b28480f7cca922a5f11f2f7c59"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "oracle",
+      "generation": 5,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/oracle/generation-005/best_model.pt",
+      "sha256": "17aac6c40205012375da9e24766cd89aec9eb78090ffcf3dda05c5de0e453bf5"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "oracle",
+      "generation": 6,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/oracle/generation-006/best_model.pt",
+      "sha256": "15074ae2d3ed57e5585b05f6ad9cc3e93413a6a0b8e371c91f44ac9fd12b71dd"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "oracle",
+      "generation": 7,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/oracle/generation-007/best_model.pt",
+      "sha256": "058c0e29465e945e37d532cab34d30e8494a8ca3ecf37869e6ac3097dd35534a"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "oracle",
+      "generation": 8,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/oracle/generation-008/best_model.pt",
+      "sha256": "d2b6c0760ac2884b1d3d5b3f4c500e0f3f4924b3bdea5bcd6381c5ce10af1af4"
+    },
+    {
+      "family": "extended",
+      "seed": 4,
+      "condition": "oracle",
+      "generation": 9,
+      "path": "../Experiments/runs/omniglot-extended-tuned-20261020/seed-04/oracle/generation-009/best_model.pt",
+      "sha256": "7909ad755c547a7fa6ea297fca4e8cc469b96c1b3d3da1bcccb0a1db30828bea"
+    }
+  ]
+}

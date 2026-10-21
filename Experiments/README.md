@@ -9,7 +9,9 @@ Our early discrete-token experiments are recorded in `STEP1_REPORT.md` through
 `STEP4_REPORT.md`. The aligned Omniglot work is documented in
 `OMNIGLOT_PROTOCOL.md`, `OMNIGLOT_EXTENDED_REPORT.md`,
 `OMNIGLOT_MULTI_SEED_REPORT.md`, `OMNIGLOT_MECHANISM_REPORT.md`, and
-`OMNIGLOT_FINAL_EVALUATION_REPORT.md`. We do not present token-task outcomes
+`OMNIGLOT_FINAL_EVALUATION_REPORT.md` (three-generation pilot), then
+`OMNIGLOT_TUNING_AND_DIAGNOSTICS_REPORT.md` and the primary
+`OMNIGLOT_TUNED_STUDY_REPORT.md`. We do not present token-task outcomes
 as Omniglot outcomes.
 
 Run archived commands from this directory. From the `Project1/` root, enter

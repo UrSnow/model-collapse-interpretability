@@ -1,0 +1,8 @@
+{
+  "base_runs": "../Experiments/runs/omniglot-base-tuned-20261020",
+  "extended_runs": "../Experiments/runs/omniglot-extended-tuned-20261020",
+  "diagnostic_size": 256,
+  "selection": "top role-attention head within each checkpoint",
+  "corruption": "replace only matching context label with unused label",
+  "patch": "clean attention-head output into corrupted prompt"
+}

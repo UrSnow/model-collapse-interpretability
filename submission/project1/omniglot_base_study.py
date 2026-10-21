@@ -4,63 +4,49 @@ from __future__ import annotations
 
 import argparse
 import json
-import subprocess
 import sys
 from pathlib import Path
 
 from .omniglot_analyze import sha256
 from .omniglot_base import write_json
-from .omniglot_study import SEEDS, SETTINGS, aggregate, write_csv
+from .omniglot_study import (PROTOCOLS, SEEDS, aggregate, locked_settings, prepare_root,
+                             run_commands, write_csv)
 
 
 CONDITIONS = {"clean": 0.0, "feedback": 1.0}
 METRICS = ("accuracy", "loss", "perplexity")
 
 
-def study_config() -> dict:
-    return {"seeds": list(SEEDS), "conditions": CONDITIONS, "settings": SETTINGS}
+def study_config(protocol: str = "tuned") -> dict:
+    return {"seeds": list(SEEDS), "conditions": CONDITIONS, "settings": PROTOCOLS[protocol]}
 
 
-def run_chains(root: Path) -> None:
-    root.mkdir(parents=True, exist_ok=True)
-    config_path = root / "study_config.json"
-    config = study_config()
-    if config_path.exists():
-        if json.loads(config_path.read_text(encoding="utf-8")) != config:
-            raise ValueError("Existing base study configuration differs")
-    else:
-        if any(root.iterdir()):
-            raise ValueError("Base study directory is not empty and has no configuration")
-        write_json(config_path, config)
+def run_chains(root: Path, protocol: str = "tuned", workers: int = 1, threads: int = 1,
+               feature_file: Path = Path("data/omniglot_resnet18_randomized_order_s0.h5")) -> None:
+    prepare_root(root, study_config(protocol))
+    settings = PROTOCOLS[protocol]
+    jobs = []
     for seed in SEEDS:
         for condition, fraction in CONDITIONS.items():
             folder = root / f"seed-{seed:02d}" / condition
-            if (folder / "summary.json").is_file():
-                print(f"Already complete: base seed {seed}, {condition}", flush=True)
-                continue
-            if folder.exists():
-                raise ValueError(f"Incomplete base run needs manual review: {folder}")
-            folder.parent.mkdir(parents=True, exist_ok=True)
-            command = [sys.executable, "-m", "project1.omniglot_base",
-                       "--output-dir", str(folder), "--seed", str(seed),
-                       "--generations", str(SETTINGS["generations"]),
-                       "--steps", str(SETTINGS["steps"]),
-                       "--train-size", str(SETTINGS["train_size"]),
-                       "--eval-size", str(SETTINGS["eval_size"]),
-                       "--batch-size", str(SETTINGS["batch_size"]),
-                       "--eval-every", str(SETTINGS["eval_every"]),
-                       "--learning-rate", str(SETTINGS["learning_rate"]),
-                       "--temperature", str(SETTINGS["temperature"]),
-                       "--synthetic-fraction", str(fraction)]
-            print(f"Training base seed {seed}, {condition}", flush=True)
-            with (folder.parent / f"{condition}.log").open("w", encoding="utf-8") as stream:
-                subprocess.run(command, check=True, stdout=stream, stderr=subprocess.STDOUT)
-            print(f"Completed base seed {seed}, {condition}", flush=True)
+            jobs.append((f"base seed {seed}, {condition}", folder, [
+                sys.executable, "-m", "project1.omniglot_base",
+                "--feature-file", str(feature_file.resolve()),
+                "--output-dir", str(folder), "--seed", str(seed),
+                "--generations", str(settings["generations"]),
+                "--steps", str(settings["steps"]),
+                "--train-size", str(settings["train_size"]),
+                "--eval-size", str(settings["eval_size"]),
+                "--batch-size", str(settings["batch_size"]),
+                "--eval-every", str(settings["eval_every"]),
+                "--learning-rate", str(settings["learning_rate"]),
+                "--temperature", str(settings["temperature"]),
+                "--synthetic-fraction", str(fraction)]))
+    run_commands(jobs, workers, threads)
 
 
 def collect_rows(root: Path) -> tuple[list[dict], list[dict]]:
-    if json.loads((root / "study_config.json").read_text(encoding="utf-8")) != study_config():
-        raise ValueError("Base study configuration differs from the locked protocol")
+    generations = locked_settings(root, study_config)["generations"]
     rows, paired = [], []
     for seed in SEEDS:
         paths = {name: root / f"seed-{seed:02d}" / name for name in CONDITIONS}
@@ -80,7 +66,7 @@ def collect_rows(root: Path) -> tuple[list[dict], list[dict]]:
         summaries = {name: json.loads((path / "summary.json").read_text(encoding="utf-8"))
                      for name, path in paths.items()}
         for condition, values in summaries.items():
-            if len(values) != SETTINGS["generations"] or [item["generation"] for item in values] != [0, 1, 2]:
+            if [item["generation"] for item in values] != list(range(generations)):
                 raise ValueError(f"Base seed {seed} incomplete summary: {condition}")
             for summary in values:
                 rows.append({"seed": seed, "condition": condition,
@@ -98,6 +84,7 @@ def collect_rows(root: Path) -> tuple[list[dict], list[dict]]:
 
 
 def analyze(root: Path, output: Path) -> None:
+    settings = locked_settings(root, study_config)
     rows, paired = collect_rows(root)
     aggregated = aggregate(rows, (*METRICS, "label_error_rate"), tuple(CONDITIONS))
     paired_aggregate = aggregate(paired, tuple(f"delta_{key}" for key in METRICS),
@@ -106,7 +93,8 @@ def analyze(root: Path, output: Path) -> None:
     for name, values in (("per_run", rows), ("paired", paired),
                          ("aggregate", aggregated), ("paired_aggregate", paired_aggregate)):
         write_csv(output / f"{name}.csv", values)
-    write_json(output / "audit.json", {"study_config": study_config(),
+    write_json(output / "audit.json", {"study_config": json.loads(
+                                           (root / "study_config.json").read_text(encoding="utf-8")),
                                        "audited_seed_count": len(SEEDS),
                                        "matched_conditions_per_seed": list(CONDITIONS),
                                        "per_run_rows": len(rows)})
@@ -126,7 +114,7 @@ def analyze(root: Path, output: Path) -> None:
     for axis, title, ylabel in zip(axes, ("Base-task accuracy", "Base-task loss"),
                                    ("Held-out accuracy", "Held-out NLL")):
         axis.set(title=title, xlabel="Generation", ylabel=ylabel)
-        axis.set_xticks(range(SETTINGS["generations"]))
+        axis.set_xticks(range(settings["generations"]))
         axis.grid(alpha=0.2)
     axes[0].set_ylim(0, 1)
     axes[0].legend(frameon=False)
@@ -140,10 +128,15 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--runs-dir", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--feature-file", type=Path,
+                        default=Path("data/omniglot_resnet18_randomized_order_s0.h5"))
+    parser.add_argument("--protocol", choices=tuple(PROTOCOLS), default="tuned")
+    parser.add_argument("--workers", type=int, default=1)
+    parser.add_argument("--threads", type=int, default=1)
     parser.add_argument("--analyze-only", action="store_true")
     args = parser.parse_args()
     if not args.analyze_only:
-        run_chains(args.runs_dir)
+        run_chains(args.runs_dir, args.protocol, args.workers, args.threads, args.feature_file)
     analyze(args.runs_dir, args.output_dir)
 
 

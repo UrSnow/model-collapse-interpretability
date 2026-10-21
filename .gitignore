@@ -29,6 +29,7 @@ env/
 /mlruns/
 *.pt
 !/Experiments/figures/omniglot-final-evaluation-20261010/episodes.pt
+!/Experiments/figures/omniglot-final-evaluation-tuned-20261020/episodes.pt
 *.pth
 *.ckpt
 *.safetensors
@@ -63,6 +64,12 @@ events.out.tfevents.*
 /Experiments/writing/
 /submission/PRELIMINARY_CONTRIBUTION_STATEMENT.tex
 /submission/PRELIMINARY_CONTRIBUTION_STATEMENT.pdf
+# The abstract names members and student numbers; keep it local until all approve.
+/abstract/main.tex
+/abstract/main.pdf
+/_NLP_2026__Mechanistic_Interp_Collapse_Project1_brife.pdf
+/NeurIPS_2024_checklist/
+__MACOSX/
 
 # LaTeX build intermediates; keep the reviewed PDF
 *.aux

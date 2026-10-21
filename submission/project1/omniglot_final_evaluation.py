@@ -15,13 +15,14 @@ from .omniglot_analyze import sha256
 from .omniglot_base import evaluate as evaluate_base, write_json
 from .omniglot_base_study import CONDITIONS as BASE_CONDITIONS
 from .omniglot_base_study import collect_rows as audit_base
+from .omniglot_base_study import study_config as base_study_config
 from .omniglot_data import (FEATURE_SHA256, OmniglotBatch, OmniglotTaskConfig,
                             OmniglotTaskGenerator, load_features)
 from .omniglot_extended import evaluate as evaluate_extended
 from .omniglot_model import (OmniglotExtendedTransformer, OmniglotInductionTransformer,
                              OmniglotModelConfig)
 from .omniglot_study import CONDITIONS as EXTENDED_CONDITIONS
-from .omniglot_study import SEEDS, SETTINGS, audit_seed, study_config
+from .omniglot_study import SEEDS, audit_seed, locked_settings
 
 
 BASE_METRICS = ("accuracy", "loss", "perplexity")
@@ -127,7 +128,12 @@ def evaluate_checkpoint(path: Path, family: str, batch: OmniglotBatch,
     return evaluate_base(model, batch) if family == "base" else evaluate_extended(model, extended)
 
 
+def generation_count(rows: list[dict]) -> int:
+    return max(int(row["generation"]) for row in rows) + 1
+
+
 def paired_rows(rows: list[dict]) -> list[dict]:
+    generations = generation_count(rows)
     indexed = {(row["family"], row["seed"], row["condition"], row["generation"]): row
                for row in rows}
     result = []
@@ -137,7 +143,7 @@ def paired_rows(rows: list[dict]) -> list[dict]:
         if family == "extended":
             comparisons.append(("feedback", "oracle"))
         for seed in SEEDS:
-            for generation in range(SETTINGS["generations"]):
+            for generation in range(generations):
                 for treatment, control in comparisons:
                     left = indexed[family, seed, treatment, generation]
                     right = indexed[family, seed, control, generation]
@@ -151,10 +157,11 @@ def paired_rows(rows: list[dict]) -> list[dict]:
 def aggregate_rows(rows: list[dict], group_key: str,
                    metric_keys: dict[str, tuple[str, ...]]) -> list[dict]:
     result = []
+    generations = generation_count(rows)
     for family, metrics in metric_keys.items():
         groups = sorted({row[group_key] for row in rows if row["family"] == family})
         for group in groups:
-            for generation in range(SETTINGS["generations"]):
+            for generation in range(generations):
                 selected = [row for row in rows if row["family"] == family
                             and row[group_key] == group and row["generation"] == generation]
                 if len(selected) != len(SEEDS):
@@ -176,6 +183,7 @@ def plot_results(output: Path) -> None:
     panels = (("base", "accuracy", "Base: first-label accuracy"),
               ("extended", "first_label_accuracy", "Extended: first-label accuracy"),
               ("extended", "pointer_tv", "Extended: pointer TV from uniform"))
+    generations = generation_count(rows)
     figure, axes = plt.subplots(1, 3, figsize=(11, 3.2), constrained_layout=True)
     for axis, (family, metric, title) in zip(axes, panels):
         conditions = BASE_CONDITIONS if family == "base" else EXTENDED_CONDITIONS
@@ -187,7 +195,7 @@ def plot_results(output: Path) -> None:
             errors = [float(row[f"{metric}_sd"]) for row in selected]
             axis.errorbar(xs, means, yerr=errors, marker="o", capsize=2, label=condition)
         axis.set(title=title, xlabel="Generation")
-        axis.set_xticks(range(SETTINGS["generations"]))
+        axis.set_xticks(range(generations))
         axis.grid(alpha=0.2)
     axes[0].set_ylabel("Held-out accuracy")
     axes[1].set_ylabel("Held-out accuracy")
@@ -201,16 +209,24 @@ def plot_results(output: Path) -> None:
 def run(args: argparse.Namespace) -> None:
     if args.output_dir.exists():
         raise FileExistsError(args.output_dir)
-    if args.size <= SETTINGS["eval_size"]:
-        raise ValueError("Final test must be larger than the study's 256 episodes per seed")
+    settings = locked_settings(args.extended_runs_dir)
+    if settings != locked_settings(args.base_runs_dir, base_study_config):
+        raise ValueError("Base and extended studies use different locked protocols")
+    generations = settings["generations"]
+    if args.size <= settings["eval_size"]:
+        raise ValueError("Final test must be larger than the study test split")
     audit_base(args.base_runs_dir)
-    if json.loads((args.extended_runs_dir / "study_config.json").read_text(encoding="utf-8")) != study_config():
-        raise ValueError("Extended study configuration differs from locked protocol")
     for seed in SEEDS:
-        audit_seed(args.extended_runs_dir, seed)
+        audit_seed(args.extended_runs_dir, seed, generations)
     features = load_features(args.feature_file)
     excluded, sources = prior_test_keys(args.prior_runs_dir,
                                        (args.base_runs_dir, args.extended_runs_dir))
+    for path in args.exclude_manifest:
+        previous = torch.load(path, map_location="cpu", weights_only=True)
+        for episode in previous.values():
+            excluded.update(episode_keys(episode))
+        sources.append({"path": str(path), "sha256": sha256(path),
+                        "kind": "earlier final-evaluation manifest"})
     if args.manifest_file is None:
         manifest = make_manifest(features, args.size, excluded)
     else:
@@ -221,7 +237,7 @@ def run(args: argparse.Namespace) -> None:
                                      ("extended", args.extended_runs_dir, EXTENDED_CONDITIONS)):
         for seed in SEEDS:
             for condition in conditions:
-                for generation in range(SETTINGS["generations"]):
+                for generation in range(generations):
                     path = root / f"seed-{seed:02d}" / condition / f"generation-{generation:03d}" / "best_model.pt"
                     checkpoint_hashes.append({"family": family, "seed": seed,
                                               "condition": condition, "generation": generation,
@@ -231,6 +247,7 @@ def run(args: argparse.Namespace) -> None:
     write_json(args.output_dir / "protocol.json", {
         "status": "frozen checkpoints; no training or checkpoint selection on final episodes",
         "size_per_seed": args.size, "seeds": list(SEEDS), "feature_sha256": FEATURE_SHA256,
+        "study_settings": settings,
         "episode_manifest_sha256": sha256(args.output_dir / "episodes.pt"),
         "replay_manifest": str(args.manifest_file) if args.manifest_file else None,
         "episode_seed_policy": "700000 + study seed; pointer seed 800000 + study seed",
@@ -284,6 +301,8 @@ def main() -> None:
     parser.add_argument("--size", type=int, default=1024)
     parser.add_argument("--manifest-file", type=Path,
                         help="Replay a saved episode manifest instead of sampling fresh episodes")
+    parser.add_argument("--exclude-manifest", type=Path, action="append", default=[],
+                        help="Also exclude prompts of an earlier final-evaluation manifest")
     parser.add_argument("--plot-only", action="store_true")
     args = parser.parse_args()
     if args.plot_only:

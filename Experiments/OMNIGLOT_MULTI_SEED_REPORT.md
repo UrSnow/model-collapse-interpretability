@@ -1,5 +1,8 @@
 # Omniglot Multi-Seed Controlled Study
 
+> **Superseded (20 Oct 2026):** the primary results are now the tuned ten-generation study in
+> `OMNIGLOT_TUNED_STUDY_REPORT.md`. Numbers below describe the three-generation pilot only.
+
 ## Scope and audit
 
 This is the aligned feature-based follow-up to the single-seed pilots in

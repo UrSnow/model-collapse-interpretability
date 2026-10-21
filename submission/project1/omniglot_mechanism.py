@@ -15,7 +15,8 @@ from .omniglot_base import write_json
 from .omniglot_data import OmniglotBatch
 from .omniglot_model import (OmniglotExtendedTransformer,
                              OmniglotInductionTransformer, OmniglotModelConfig)
-from .omniglot_study import SEEDS
+from .omniglot_base_study import study_config as base_study_config
+from .omniglot_study import SEEDS, locked_settings
 
 
 CONDITIONS = {"base": ("clean", "feedback"),
@@ -235,9 +236,10 @@ def aggregate(rows: list[dict]) -> list[dict]:
                "candidate_pair_patch_restoration", "max_single_head_patch_restoration",
                "max_single_head_first_accuracy_drop", "effective_examples")
     result = []
+    generations = max(row["generation"] for row in rows) + 1
     for family, conditions in CONDITIONS.items():
         for condition in conditions:
-            for generation in range(3):
+            for generation in range(generations):
                 selected = [row for row in rows if row["family"] == family
                             and row["condition"] == condition and row["generation"] == generation]
                 if len(selected) != len(SEEDS):
@@ -257,12 +259,15 @@ def run(base_runs: Path, extended_runs: Path, output: Path, size: int) -> None:
         raise ValueError("Diagnostic size must be between 1 and 256")
     if output.exists():
         raise FileExistsError(output)
+    generations = locked_settings(extended_runs)["generations"]
+    if locked_settings(base_runs, base_study_config)["generations"] != generations:
+        raise ValueError("Base and extended studies have different generation counts")
     summaries, heads = [], []
     for family, root in (("base", base_runs), ("extended", extended_runs)):
         for condition in CONDITIONS[family]:
             for seed in SEEDS:
                 path = root / f"seed-{seed:02d}" / condition
-                for generation in range(3):
+                for generation in range(generations):
                     summary, head_rows = inspect_checkpoint(path, family, generation, size)
                     prefix = {"family": family, "condition": condition,
                               "seed": seed, "generation": generation}
@@ -299,15 +304,15 @@ def run(base_runs: Path, extended_runs: Path, output: Path, size: int) -> None:
             selected = [row for row in aggregates if row["family"] == family
                         and row["condition"] == condition]
             label = f"{family} {condition}"
-            axes[0].plot(range(3), [row["candidate_pair_accuracy_drop_mean"] for row in selected],
+            axes[0].plot(range(generations), [row["candidate_pair_accuracy_drop_mean"] for row in selected],
                          marker="o", label=label)
-            axes[1].plot(range(3), [row["candidate_pair_patch_restoration_mean"] for row in selected],
+            axes[1].plot(range(generations), [row["candidate_pair_patch_restoration_mean"] for row in selected],
                          marker="o", label=label)
     axes[0].set(title="Candidate-pair necessity", ylabel="Diagnostic accuracy drop")
     axes[1].set(title="Candidate-pair patching", ylabel="Normalized log-probability restoration")
     for axis in axes:
         axis.set_xlabel("Generation")
-        axis.set_xticks(range(3))
+        axis.set_xticks(range(generations))
         axis.axhline(0, color="0.5", linewidth=0.8)
         axis.grid(alpha=0.2)
     handles, labels = axes[0].get_legend_handles_labels()

@@ -1,0 +1,6 @@
+{
+  "split": "diagnostic episodes saved with each chain",
+  "attention_maps": "mean over episodes whose matching context pair is first",
+  "ov_copy": "direct path, LayerNorm applied to the isolated label vector",
+  "exemplar_transfer": "query feature replaced by another exemplar of the same class"
+}

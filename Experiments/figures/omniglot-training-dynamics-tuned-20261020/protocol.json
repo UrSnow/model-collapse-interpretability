@@ -1,0 +1,6 @@
+{
+  "base_runs_dir": "../Experiments/runs/omniglot-base-tuned-20261020",
+  "extended_runs_dir": "../Experiments/runs/omniglot-extended-tuned-20261020",
+  "train_scores": "frozen validation-selected checkpoints on fixed training episodes",
+  "curves": "saved histories; training loss is one minibatch at each evaluation step"
+}

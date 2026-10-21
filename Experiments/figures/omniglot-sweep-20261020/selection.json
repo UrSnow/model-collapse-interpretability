@@ -1,0 +1,46 @@
+{
+  "sweep_config": {
+    "tasks": [
+      "base",
+      "extended"
+    ],
+    "learning_rates": [
+      0.0001,
+      0.0003,
+      0.001,
+      0.003
+    ],
+    "budgets": [
+      1000,
+      2000,
+      3000,
+      5000
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "settings": {
+      "train_size": 4096,
+      "eval_size": 256,
+      "batch_size": 64,
+      "eval_every": 100
+    },
+    "selection": "lowest mean validation loss over seeds; test metrics unused"
+  },
+  "choice": {
+    "base": {
+      "learning_rate": 0.0001,
+      "budget": 5000,
+      "validation_loss_mean": 0.011206130186716715,
+      "validation_accuracy_mean": 0.99609375
+    },
+    "extended": {
+      "learning_rate": 0.001,
+      "budget": 5000,
+      "validation_loss_mean": 0.23716034955577925,
+      "validation_accuracy_mean": 0.9947916666666666
+    }
+  }
+}

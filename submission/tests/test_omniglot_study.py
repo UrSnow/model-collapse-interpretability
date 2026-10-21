@@ -46,10 +46,10 @@ class OmniglotStudyTests(unittest.TestCase):
                 for name in ("splits.pt", "generation-000/training_targets.pt",
                              "generation-000/best_model.pt"):
                     (folder / name).write_bytes(b"matched")
-            self.assertEqual(len(audit_seed(root, 0)), len(CONDITIONS))
+            self.assertEqual(len(audit_seed(root, 0, 3)), len(CONDITIONS))
             (root / "seed-00" / "oracle" / "splits.pt").write_bytes(b"different")
             with self.assertRaisesRegex(ValueError, "unmatched artifact"):
-                audit_seed(root, 0)
+                audit_seed(root, 0, 3)
 
 
 if __name__ == "__main__":
