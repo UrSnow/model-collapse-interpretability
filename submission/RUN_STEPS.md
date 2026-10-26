@@ -89,6 +89,12 @@ we use `wsl.exe ../.venv-wsl/bin/python` instead.
    byte-identical per-run metrics after reorganization and after adding
    named protocols.
 
+8. Draw the abstract figure from the final-evaluation and mechanism outputs:
+
+   ```text
+   python -m project1.omniglot_abstract_figure --final-dir figures/final-evaluation --mechanism-dir figures/mechanism --output figures/abstract/main_results
+   ```
+
 The commands create local `data/`, `runs/`, and `figures/` directories. They
 are ignored by Git but must also be omitted when packaging this folder for
 upload. If the feature file is elsewhere, pass `--feature-file PATH` to the

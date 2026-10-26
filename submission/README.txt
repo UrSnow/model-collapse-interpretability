@@ -15,11 +15,11 @@ project1/       Aligned data, models, study runners, diagnostics, and evaluator
 tests/          Focused tests for the submitted implementation
 requirements.txt
 RUN_STEPS.md    Commands and output descriptions
-The local contribution-statement draft is not part of the GitHub package until
-all members approve its wording and the sharing of personal details. The
-extended abstract and final declarations will be added after group review.
-We do not include exploratory notebooks, legacy token experiments, raw run
-directories, virtual environments, or downloaded feature data in this folder.
+
+The extended abstract (with the NeurIPS checklist and AI declaration) is
+submitted as a separate PDF. We do not include exploratory notebooks, legacy
+token experiments, raw run directories, virtual environments, or downloaded
+feature data in this folder.
 
 Quick start
 -----------
@@ -55,10 +55,10 @@ bundle their source code or data. The exploratory notebooks in ../Experiments/
 are our group members' work; we adapted selected methods, not their numerical
 findings, to the aligned feature task. Our extended next-symbol prediction
 chooses between the two features already present in the context. It does not
-generate a new image, and this constraint must be stated in the abstract.
+generate a new image; the abstract states this constraint.
 
 Our saved research results and detailed working reports are in ../Experiments/;
-they are not required to run this package from a fresh copy. We will base the
-abstract only on results we have checked against those saved artifacts.
+they are not required to run this package from a fresh copy. Every number in
+the abstract was checked against those saved artifacts.
 Commands in RUN_STEPS.md create local data, runs, and figures directories.
 We exclude those generated directories when assembling the final upload.

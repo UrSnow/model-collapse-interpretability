@@ -67,6 +67,7 @@ events.out.tfevents.*
 # The abstract names members and student numbers; keep it local until all approve.
 /abstract/main.tex
 /abstract/main.pdf
+/abstract/forms/
 /_NLP_2026__Mechanistic_Interp_Collapse_Project1_brife.pdf
 /NeurIPS_2024_checklist/
 __MACOSX/
@@ -77,6 +78,12 @@ __MACOSX/
 *.fls
 *.synctex.gz
 *.out
+
+# Keep working notes locally; publish only the repository overview and run steps.
+*.md
+*.MD
+!/README.md
+!/submission/RUN_STEPS.md
 
 # Local credentials and environment settings
 .env
@@ -91,5 +98,5 @@ __MACOSX/
 Thumbs.db
 Desktop.ini
 
-# Keep source, tests, configuration templates, Markdown reports, and deliberate
-# publication figures outside generated-output directories eligible for Git.
+# Keep source, tests, configuration templates, and deliberate publication
+# figures outside generated-output directories eligible for Git.
