@@ -68,12 +68,15 @@ events.out.tfevents.*
 /abstract/main.tex
 /abstract/main.pdf
 /abstract/forms/
+/NLP student AI declaration*.pdf
 /_NLP_2026__Mechanistic_Interp_Collapse_Project1_brife.pdf
 /NeurIPS_2024_checklist/
 __MACOSX/
 
 # LaTeX build intermediates; keep the reviewed PDF
 *.aux
+*.bbl
+*.blg
 *.fdb_latexmk
 *.fls
 *.synctex.gz
